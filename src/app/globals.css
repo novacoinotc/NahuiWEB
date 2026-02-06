@@ -1,0 +1,280 @@
+@import "tailwindcss";
+
+/*
+  NOTA: Para usar la fuente Clother:
+  1. Agrega los archivos Clother-Regular.woff2, Clother-Medium.woff2, Clother-Bold.woff2
+     a /public/fonts/
+  2. Descomenta el @font-face de abajo
+*/
+
+/*
+@font-face {
+  font-family: 'Clother';
+  src: url('/fonts/Clother-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clother';
+  src: url('/fonts/Clother-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clother';
+  src: url('/fonts/Clother-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+@theme inline {
+  /* Nahui Labs Color Palette */
+  --color-nahui-black-deep: #0B0E14;
+  --color-nahui-black-pure: #000000;
+  --color-nahui-gray-graphite: #1C1F26;
+  --color-nahui-cyan-electric: #00E5FF;
+  --color-nahui-blue-deep: #1f41bb;
+
+  /* Extended grays for text */
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+
+  /* Font families */
+  /* Cambia 'system-ui' por 'Clother' cuando agregues los archivos de fuente */
+  --font-heading: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: var(--font-jetbrains), 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* Smooth scroll for navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-nahui-black-pure);
+  color: #ffffff;
+  font-family: var(--font-body);
+}
+
+/* Typography classes */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Headings use Clother (or fallback) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-nahui-black-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-nahui-gray-graphite);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-nahui-cyan-electric);
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-nahui-cyan-electric);
+  outline-offset: 2px;
+}
+
+/* Grid pattern for hero */
+.hero-grid {
+  background-image: radial-gradient(circle, var(--color-nahui-gray-graphite) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Nahui Gradient - right to left: blue to cyan */
+.bg-nahui-gradient {
+  background: linear-gradient(to left, #1f41bb, #00E5FF);
+}
+
+.bg-nahui-gradient-hover:hover {
+  background: linear-gradient(to left, #1a3699, #00d4eb);
+}
+
+/* Text gradient */
+.text-nahui-gradient {
+  background: linear-gradient(to left, #1f41bb, #00E5FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Border gradient (using pseudo-element) */
+.border-nahui-gradient {
+  position: relative;
+  background: var(--color-nahui-black-deep);
+  border: none;
+}
+
+.border-nahui-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(to left, #1f41bb, #00E5FF);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Glow effect */
+.glow-cyan {
+  box-shadow: 0 0 60px rgba(0, 229, 255, 0.15);
+}
+
+.glow-gradient {
+  box-shadow: 0 0 40px rgba(0, 229, 255, 0.2), 0 0 80px rgba(31, 65, 187, 0.15);
+}
+
+/* Line pattern for sections */
+.line-pattern {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 79px,
+    var(--color-nahui-gray-graphite) 79px,
+    var(--color-nahui-gray-graphite) 80px
+  );
+}
+
+/* === ANIMATED EFFECTS === */
+
+/* Typing cursor blink */
+@keyframes typing-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-typing-cursor {
+  animation: typing-cursor 0.8s step-end infinite;
+}
+
+/* Glow pulse */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.15), 0 0 40px rgba(0, 229, 255, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.3), 0 0 60px rgba(0, 229, 255, 0.1);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Border gradient animated */
+@keyframes gradient-rotate {
+  0% { --gradient-angle: 0deg; }
+  100% { --gradient-angle: 360deg; }
+}
+
+.border-gradient-animated {
+  position: relative;
+  background: var(--color-nahui-black-deep);
+}
+
+.border-gradient-animated::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--gradient-angle, 0deg),
+    #00E5FF,
+    #1f41bb,
+    #00E5FF
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: gradient-rotate 4s linear infinite;
+}
+
+/* Shimmer effect for buttons */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Timeline draw animation */
+@keyframes timeline-draw {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* Check animation */
+@keyframes check-draw {
+  0% { stroke-dashoffset: 24; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.animate-check-draw {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  animation: check-draw 0.5s ease-out forwards;
+}
+
+/* Strikethrough animation */
+@keyframes strike {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+.animate-strike {
+  position: relative;
+}
+
+.animate-strike::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 1px;
+  width: 0;
+  background: #ff4444;
+  animation: strike 0.8s ease-out forwards;
+}
