@@ -214,6 +214,788 @@ export function DataStream({ className = "" }: { className?: string }) {
   );
 }
 
+// Animated CPU/Processor chip with circuit traces
+export function AnimatedCPU({ className = "" }: { className?: string }) {
+  return (
+    <div className={`relative ${className}`}>
+      <svg
+        viewBox="0 0 200 200"
+        className="w-full h-full"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <radialGradient id="cpuCoreGlow">
+            <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.4" />
+            <stop offset="60%" stopColor="#00E5FF" stopOpacity="0.1" />
+            <stop offset="100%" stopColor="#00E5FF" stopOpacity="0" />
+          </radialGradient>
+          <linearGradient id="cpuTraceGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#1f41bb" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+
+        {/* Central chip body */}
+        <motion.rect
+          x="60"
+          y="60"
+          width="80"
+          height="80"
+          rx="6"
+          ry="6"
+          fill="none"
+          stroke="#00E5FF"
+          strokeWidth="1.5"
+          opacity="0.4"
+          animate={{ opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* Inner chip grid pattern */}
+        {[0, 1, 2, 3].map((row) =>
+          [0, 1, 2, 3].map((col) => (
+            <motion.rect
+              key={`grid-${row}-${col}`}
+              x={68 + col * 17}
+              y={68 + row * 17}
+              width="12"
+              height="12"
+              rx="1"
+              fill="none"
+              stroke="#00E5FF"
+              strokeWidth="0.3"
+              opacity="0.15"
+              animate={{ opacity: [0.08, 0.2, 0.08] }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                delay: (row + col) * 0.2,
+              }}
+            />
+          ))
+        )}
+
+        {/* Central core circle */}
+        <motion.circle
+          cx="100"
+          cy="100"
+          r="18"
+          fill="url(#cpuCoreGlow)"
+          animate={{
+            r: [18, 22, 18],
+            opacity: [0.6, 1, 0.6],
+          }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.circle
+          cx="100"
+          cy="100"
+          r="8"
+          fill="#00E5FF"
+          opacity="0.3"
+          animate={{ opacity: [0.2, 0.5, 0.2] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* Top pins and traces */}
+        {[80, 100, 120].map((x, i) => (
+          <g key={`top-pin-${i}`}>
+            <motion.line
+              x1={x}
+              y1="60"
+              x2={x}
+              y2="45"
+              stroke="#00E5FF"
+              strokeWidth="1.5"
+              opacity="0.5"
+            />
+            <motion.path
+              d={`M${x},45 L${x},${15 - i * 3}`}
+              fill="none"
+              stroke="#00E5FF"
+              strokeWidth="0.8"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: [0, 1, 1], opacity: [0, 0.6, 0] }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                delay: i * 0.4,
+                ease: "easeInOut",
+              }}
+            />
+            <motion.circle
+              cx={x}
+              cy={15 - i * 3}
+              r="2"
+              fill="#00E5FF"
+              animate={{ opacity: [0, 0.8, 0], scale: [0, 1, 0] }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                delay: i * 0.4 + 1,
+              }}
+            />
+          </g>
+        ))}
+
+        {/* Right pins and traces */}
+        {[80, 100, 120].map((y, i) => (
+          <g key={`right-pin-${i}`}>
+            <motion.line
+              x1="140"
+              y1={y}
+              x2="155"
+              y2={y}
+              stroke="#00E5FF"
+              strokeWidth="1.5"
+              opacity="0.5"
+            />
+            <motion.path
+              d={`M155,${y} L${185 + i * 3},${y}`}
+              fill="none"
+              stroke="#00E5FF"
+              strokeWidth="0.8"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: [0, 1, 1], opacity: [0, 0.6, 0] }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                delay: i * 0.4 + 0.8,
+                ease: "easeInOut",
+              }}
+            />
+            <motion.circle
+              cx={185 + i * 3}
+              cy={y}
+              r="2"
+              fill="#00E5FF"
+              animate={{ opacity: [0, 0.8, 0], scale: [0, 1, 0] }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                delay: i * 0.4 + 1.8,
+              }}
+            />
+          </g>
+        ))}
+
+        {/* Bottom pins and traces */}
+        {[80, 100, 120].map((x, i) => (
+          <g key={`bottom-pin-${i}`}>
+            <motion.line
+              x1={x}
+              y1="140"
+              x2={x}
+              y2="155"
+              stroke="#00E5FF"
+              strokeWidth="1.5"
+              opacity="0.5"
+            />
+            <motion.path
+              d={`M${x},155 L${x},${185 + i * 3}`}
+              fill="none"
+              stroke="#00E5FF"
+              strokeWidth="0.8"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: [0, 1, 1], opacity: [0, 0.6, 0] }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                delay: i * 0.4 + 1.6,
+                ease: "easeInOut",
+              }}
+            />
+            <motion.circle
+              cx={x}
+              cy={185 + i * 3}
+              r="2"
+              fill="#00E5FF"
+              animate={{ opacity: [0, 0.8, 0], scale: [0, 1, 0] }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                delay: i * 0.4 + 2.6,
+              }}
+            />
+          </g>
+        ))}
+
+        {/* Left pins and traces */}
+        {[80, 100, 120].map((y, i) => (
+          <g key={`left-pin-${i}`}>
+            <motion.line
+              x1="60"
+              y1={y}
+              x2="45"
+              y2={y}
+              stroke="#00E5FF"
+              strokeWidth="1.5"
+              opacity="0.5"
+            />
+            <motion.path
+              d={`M45,${y} L${15 - i * 3},${y}`}
+              fill="none"
+              stroke="#00E5FF"
+              strokeWidth="0.8"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: [0, 1, 1], opacity: [0, 0.6, 0] }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                delay: i * 0.4 + 2.4,
+                ease: "easeInOut",
+              }}
+            />
+            <motion.circle
+              cx={15 - i * 3}
+              cy={y}
+              r="2"
+              fill="#00E5FF"
+              animate={{ opacity: [0, 0.8, 0], scale: [0, 1, 0] }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                delay: i * 0.4 + 3.4,
+              }}
+            />
+          </g>
+        ))}
+      </svg>
+    </div>
+  );
+}
+
+// Animated security shield with scanning line effect
+export function AnimatedShield({ className = "" }: { className?: string }) {
+  return (
+    <div className={`relative ${className}`}>
+      <svg
+        viewBox="0 0 200 240"
+        className="w-full h-full"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="shieldStrokeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.6" />
+            <stop offset="50%" stopColor="#1f41bb" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#00E5FF" stopOpacity="0.6" />
+          </linearGradient>
+          <linearGradient id="shieldScanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#00E5FF" stopOpacity="0" />
+            <stop offset="45%" stopColor="#00E5FF" stopOpacity="0.3" />
+            <stop offset="50%" stopColor="#00E5FF" stopOpacity="0.6" />
+            <stop offset="55%" stopColor="#00E5FF" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#00E5FF" stopOpacity="0" />
+          </linearGradient>
+          <clipPath id="shieldClip">
+            <path d="M100,20 C100,20 160,30 170,40 C170,40 175,100 170,130 C165,160 140,185 100,210 C60,185 35,160 30,130 C25,100 30,40 30,40 C40,30 100,20 100,20 Z" />
+          </clipPath>
+          <radialGradient id="shieldGlow">
+            <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.1" />
+            <stop offset="100%" stopColor="#00E5FF" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+
+        {/* Outer glow */}
+        <motion.ellipse
+          cx="100"
+          cy="115"
+          rx="95"
+          ry="110"
+          fill="url(#shieldGlow)"
+          animate={{ opacity: [0.3, 0.6, 0.3] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* Shield outline */}
+        <motion.path
+          d="M100,20 C100,20 160,30 170,40 C170,40 175,100 170,130 C165,160 140,185 100,210 C60,185 35,160 30,130 C25,100 30,40 30,40 C40,30 100,20 100,20 Z"
+          fill="none"
+          stroke="url(#shieldStrokeGrad)"
+          strokeWidth="1.5"
+          animate={{ opacity: [0.4, 0.7, 0.4] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* Pulsing border glow */}
+        <motion.path
+          d="M100,20 C100,20 160,30 170,40 C170,40 175,100 170,130 C165,160 140,185 100,210 C60,185 35,160 30,130 C25,100 30,40 30,40 C40,30 100,20 100,20 Z"
+          fill="none"
+          stroke="#00E5FF"
+          strokeWidth="3"
+          opacity="0.1"
+          animate={{ opacity: [0.05, 0.15, 0.05] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* Scanning line (clipped inside shield) */}
+        <g clipPath="url(#shieldClip)">
+          <motion.rect
+            x="25"
+            y="0"
+            width="150"
+            height="40"
+            fill="url(#shieldScanGrad)"
+            animate={{ y: [20, 200, 20] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </g>
+
+        {/* Inner lock icon - body */}
+        <motion.rect
+          x="82"
+          y="110"
+          width="36"
+          height="30"
+          rx="4"
+          ry="4"
+          fill="none"
+          stroke="#00E5FF"
+          strokeWidth="1.2"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: [0.3, 0.6, 0.3] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* Inner lock icon - shackle */}
+        <motion.path
+          d="M88,110 L88,97 C88,87 112,87 112,97 L112,110"
+          fill="none"
+          stroke="#00E5FF"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: [0, 1, 1], opacity: [0, 0.6, 0.3] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* Lock keyhole */}
+        <motion.circle
+          cx="100"
+          cy="122"
+          r="4"
+          fill="#00E5FF"
+          animate={{ opacity: [0.3, 0.7, 0.3] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.rect
+          x="98"
+          y="124"
+          width="4"
+          height="8"
+          rx="1"
+          fill="#00E5FF"
+          animate={{ opacity: [0.3, 0.7, 0.3] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* Corner nodes */}
+        {[
+          { cx: 100, cy: 20 },
+          { cx: 170, cy: 40 },
+          { cx: 30, cy: 40 },
+          { cx: 100, cy: 210 },
+          { cx: 170, cy: 130 },
+          { cx: 30, cy: 130 },
+        ].map((node, i) => (
+          <g key={`shield-node-${i}`}>
+            <motion.circle
+              cx={node.cx}
+              cy={node.cy}
+              r="5"
+              fill="#00E5FF"
+              opacity="0.1"
+              animate={{
+                r: [5, 8, 5],
+                opacity: [0.05, 0.2, 0.05],
+              }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                delay: i * 0.4,
+              }}
+            />
+            <motion.circle
+              cx={node.cx}
+              cy={node.cy}
+              r="2"
+              fill="#00E5FF"
+              animate={{ opacity: [0.3, 0.8, 0.3] }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                delay: i * 0.4,
+              }}
+            />
+          </g>
+        ))}
+      </svg>
+    </div>
+  );
+}
+
+// Animated rocket with particle exhaust trail
+export function AnimatedRocket({ className = "" }: { className?: string }) {
+  return (
+    <div className={`relative ${className}`}>
+      <svg
+        viewBox="0 0 200 280"
+        className="w-full h-full"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="rocketBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="#1f41bb" stopOpacity="0.5" />
+          </linearGradient>
+          <radialGradient id="exhaustGlow" cx="50%" cy="0%" r="80%">
+            <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.5" />
+            <stop offset="40%" stopColor="#1f41bb" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="#1f41bb" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+
+        {/* Twinkling stars */}
+        {[
+          { cx: 30, cy: 40 },
+          { cx: 160, cy: 60 },
+          { cx: 50, cy: 100 },
+          { cx: 170, cy: 130 },
+          { cx: 25, cy: 170 },
+          { cx: 180, cy: 200 },
+          { cx: 40, cy: 240 },
+          { cx: 155, cy: 260 },
+        ].map((star, i) => (
+          <motion.circle
+            key={`star-${i}`}
+            cx={star.cx}
+            cy={star.cy}
+            r="1.5"
+            fill="#00E5FF"
+            animate={{ opacity: [0.1, 0.7, 0.1], scale: [0.8, 1.2, 0.8] }}
+            transition={{
+              duration: 2 + Math.random() * 2,
+              repeat: Infinity,
+              delay: i * 0.5,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
+
+        {/* Speed lines */}
+        {[
+          { x: 60, y: 80, length: 25 },
+          { x: 130, y: 100, length: 20 },
+          { x: 55, y: 140, length: 30 },
+          { x: 140, y: 160, length: 22 },
+        ].map((line, i) => (
+          <motion.line
+            key={`speed-${i}`}
+            x1={line.x}
+            y1={line.y}
+            x2={line.x}
+            y2={line.y + line.length}
+            stroke="#00E5FF"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: [0, 0.4, 0],
+              y1: [line.y, line.y + 40, line.y + 80],
+              y2: [line.y + line.length, line.y + line.length + 40, line.y + line.length + 80],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              delay: i * 0.4,
+              ease: "linear",
+            }}
+          />
+        ))}
+
+        {/* Rocket group with bobbing animation */}
+        <motion.g
+          animate={{ y: [-5, 5, -5] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        >
+          {/* Rocket nose cone (triangle) */}
+          <motion.path
+            d="M100,50 L88,90 L112,90 Z"
+            fill="url(#rocketBodyGrad)"
+            stroke="#00E5FF"
+            strokeWidth="0.8"
+            opacity="0.6"
+          />
+
+          {/* Rocket body (rectangle) */}
+          <motion.rect
+            x="88"
+            y="90"
+            width="24"
+            height="50"
+            rx="2"
+            fill="url(#rocketBodyGrad)"
+            stroke="#00E5FF"
+            strokeWidth="0.8"
+            opacity="0.6"
+          />
+
+          {/* Window/porthole */}
+          <motion.circle
+            cx="100"
+            cy="105"
+            r="6"
+            fill="none"
+            stroke="#00E5FF"
+            strokeWidth="0.8"
+            animate={{ opacity: [0.4, 0.8, 0.4] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <motion.circle
+            cx="100"
+            cy="105"
+            r="3"
+            fill="#00E5FF"
+            animate={{ opacity: [0.2, 0.5, 0.2] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          />
+
+          {/* Left fin */}
+          <motion.path
+            d="M88,125 L72,148 L88,140 Z"
+            fill="url(#rocketBodyGrad)"
+            stroke="#00E5FF"
+            strokeWidth="0.8"
+            opacity="0.5"
+          />
+
+          {/* Right fin */}
+          <motion.path
+            d="M112,125 L128,148 L112,140 Z"
+            fill="url(#rocketBodyGrad)"
+            stroke="#00E5FF"
+            strokeWidth="0.8"
+            opacity="0.5"
+          />
+
+          {/* Exhaust glow */}
+          <motion.ellipse
+            cx="100"
+            cy="150"
+            rx="12"
+            ry="20"
+            fill="url(#exhaustGlow)"
+            animate={{
+              ry: [20, 30, 20],
+              opacity: [0.4, 0.7, 0.4],
+            }}
+            transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
+          />
+
+          {/* Exhaust particles */}
+          {[
+            { cx: 96, delay: 0 },
+            { cx: 100, delay: 0.2 },
+            { cx: 104, delay: 0.4 },
+            { cx: 98, delay: 0.6 },
+            { cx: 102, delay: 0.8 },
+          ].map((particle, i) => (
+            <motion.circle
+              key={`exhaust-${i}`}
+              cx={particle.cx}
+              cy="150"
+              r="2"
+              fill="#00E5FF"
+              animate={{
+                cy: [150, 190, 220],
+                opacity: [0.6, 0.3, 0],
+                r: [2, 3, 1],
+              }}
+              transition={{
+                duration: 1.2,
+                repeat: Infinity,
+                delay: particle.delay,
+                ease: "easeOut",
+              }}
+            />
+          ))}
+        </motion.g>
+      </svg>
+    </div>
+  );
+}
+
+// Animated DNA double helix
+export function AnimatedDNA({ className = "" }: { className?: string }) {
+  const strandPoints = 12;
+  const height = 260;
+  const centerX = 60;
+  const amplitude = 25;
+  const verticalStep = height / strandPoints;
+
+  return (
+    <div className={`relative ${className}`}>
+      <svg
+        viewBox="0 0 120 300"
+        className="w-full h-full"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="dnaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.7" />
+            <stop offset="50%" stopColor="#1f41bb" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#00E5FF" stopOpacity="0.7" />
+          </linearGradient>
+          <linearGradient id="dnaGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#1f41bb" stopOpacity="0.7" />
+            <stop offset="50%" stopColor="#00E5FF" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#1f41bb" stopOpacity="0.7" />
+          </linearGradient>
+        </defs>
+
+        {/* Left strand (sine wave) */}
+        <motion.path
+          d={`M${centerX},20 ${Array.from({ length: strandPoints + 1 }, (_, i) => {
+            const y = 20 + i * verticalStep;
+            const x = centerX + Math.sin((i / strandPoints) * Math.PI * 3) * amplitude;
+            return `L${x},${y}`;
+          }).join(" ")}`}
+          fill="none"
+          stroke="url(#dnaGradient)"
+          strokeWidth="2"
+          strokeLinecap="round"
+          animate={{ opacity: [0.4, 0.7, 0.4] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* Right strand (opposite sine wave) */}
+        <motion.path
+          d={`M${centerX},20 ${Array.from({ length: strandPoints + 1 }, (_, i) => {
+            const y = 20 + i * verticalStep;
+            const x = centerX - Math.sin((i / strandPoints) * Math.PI * 3) * amplitude;
+            return `L${x},${y}`;
+          }).join(" ")}`}
+          fill="none"
+          stroke="url(#dnaGradient2)"
+          strokeWidth="2"
+          strokeLinecap="round"
+          animate={{ opacity: [0.4, 0.7, 0.4] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+        />
+
+        {/* Connecting rungs between strands */}
+        {Array.from({ length: strandPoints + 1 }, (_, i) => {
+          const y = 20 + i * verticalStep;
+          const x1 = centerX + Math.sin((i / strandPoints) * Math.PI * 3) * amplitude;
+          const x2 = centerX - Math.sin((i / strandPoints) * Math.PI * 3) * amplitude;
+          return (
+            <g key={`rung-${i}`}>
+              <motion.line
+                x1={x1}
+                y1={y}
+                x2={x2}
+                y2={y}
+                stroke="#00E5FF"
+                strokeWidth="1"
+                strokeLinecap="round"
+                animate={{
+                  opacity: [0.1, 0.4, 0.1],
+                  strokeWidth: [0.5, 1.2, 0.5],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: i * 0.3,
+                  ease: "easeInOut",
+                }}
+              />
+
+              {/* Left node */}
+              <motion.circle
+                cx={x1}
+                cy={y}
+                r="3"
+                fill="#00E5FF"
+                animate={{
+                  opacity: [0.2, 0.7, 0.2],
+                  r: [2.5, 4, 2.5],
+                }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  delay: i * 0.3,
+                  ease: "easeInOut",
+                }}
+              />
+
+              {/* Right node */}
+              <motion.circle
+                cx={x2}
+                cy={y}
+                r="3"
+                fill="#1f41bb"
+                animate={{
+                  opacity: [0.2, 0.7, 0.2],
+                  r: [2.5, 4, 2.5],
+                }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  delay: i * 0.3 + 0.5,
+                  ease: "easeInOut",
+                }}
+              />
+            </g>
+          );
+        })}
+
+        {/* Outer glow pulse on midpoint nodes */}
+        {[3, 6, 9].map((i) => {
+          const y = 20 + i * verticalStep;
+          const x1 = centerX + Math.sin((i / strandPoints) * Math.PI * 3) * amplitude;
+          const x2 = centerX - Math.sin((i / strandPoints) * Math.PI * 3) * amplitude;
+          return (
+            <g key={`glow-${i}`}>
+              <motion.circle
+                cx={x1}
+                cy={y}
+                r="8"
+                fill="#00E5FF"
+                opacity="0.05"
+                animate={{
+                  r: [8, 14, 8],
+                  opacity: [0.03, 0.12, 0.03],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  delay: i * 0.5,
+                }}
+              />
+              <motion.circle
+                cx={x2}
+                cy={y}
+                r="8"
+                fill="#1f41bb"
+                opacity="0.05"
+                animate={{
+                  r: [8, 14, 8],
+                  opacity: [0.03, 0.12, 0.03],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  delay: i * 0.5 + 0.8,
+                }}
+              />
+            </g>
+          );
+        })}
+      </svg>
+    </div>
+  );
+}
+
 // Animated globe for GlobalPresence
 export function AnimatedGlobe({ className = "" }: { className?: string }) {
   return (

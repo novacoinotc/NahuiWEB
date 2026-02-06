@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionHeader } from "../ui";
+import { AnimatedCPU } from "../ui/SVGDecorations";
 
 const standards = [
   {
@@ -57,8 +58,17 @@ const itemVariants = {
 
 export default function NahuiStandard() {
   return (
-    <section className="bg-[#0B0E14] py-24 lg:py-32 line-pattern">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <section className="relative bg-[#0B0E14] py-24 lg:py-32 line-pattern overflow-hidden">
+      {/* Animated CPU decoration - right side */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 opacity-20 pointer-events-none hidden lg:block">
+        <AnimatedCPU />
+      </div>
+      {/* Animated CPU decoration - left side (mirrored) */}
+      <div className="absolute left-0 bottom-16 w-48 h-48 opacity-10 pointer-events-none hidden lg:block" style={{ transform: "scaleX(-1)" }}>
+        <AnimatedCPU />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

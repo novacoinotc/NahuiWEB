@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Shield, RefreshCcw, Clock, FileCheck, Headphones, Lock } from "lucide-react";
 import { SectionHeader, FloatingParticles } from "../ui";
-import { HexGrid } from "../ui/SVGDecorations";
+import { HexGrid, AnimatedShield } from "../ui/SVGDecorations";
 
 const guarantees = [
   {
@@ -96,6 +96,10 @@ export default function Guarantees() {
     <section className="relative bg-[#0B0E14] py-24 lg:py-32 overflow-hidden">
       <FloatingParticles count={12} />
       <HexGrid opacity={0.03} />
+      {/* Animated Shield decoration */}
+      <div className="absolute left-4 top-1/2 -translate-y-1/2 w-56 h-64 opacity-15 pointer-events-none hidden lg:block">
+        <AnimatedShield />
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         <motion.div

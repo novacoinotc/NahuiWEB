@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Clock, DollarSign, Brain, Headphones, Shield, Zap } from "lucide-react";
 import { SectionHeader, FloatingParticles } from "../ui";
-import { DataStream } from "../ui/SVGDecorations";
+import { DataStream, AnimatedDNA } from "../ui/SVGDecorations";
 
 const painPoints = [
   {
@@ -62,6 +62,10 @@ export default function Differentiators() {
     <section id="diferenciadores" className="relative bg-black py-24 lg:py-32 overflow-hidden">
       <FloatingParticles count={15} />
       <DataStream />
+      {/* Animated DNA decoration */}
+      <div className="absolute right-4 top-16 w-24 h-72 opacity-20 pointer-events-none hidden lg:block">
+        <AnimatedDNA />
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         <motion.div

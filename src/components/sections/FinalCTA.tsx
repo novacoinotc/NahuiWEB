@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button, FloatingParticles, AnimatedOrbs } from "../ui";
+import { AnimatedRocket } from "../ui/SVGDecorations";
 
 export default function FinalCTA() {
   return (
@@ -9,6 +10,10 @@ export default function FinalCTA() {
       {/* Animated background */}
       <AnimatedOrbs />
       <FloatingParticles count={25} />
+      {/* Animated Rocket decoration */}
+      <div className="absolute right-8 top-1/2 -translate-y-1/2 w-40 h-56 opacity-20 pointer-events-none hidden lg:block">
+        <AnimatedRocket />
+      </div>
 
       <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-12 text-center">
         <motion.div
