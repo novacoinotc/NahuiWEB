@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import AnimatedCounter from "../ui/AnimatedCounter";
+import { HexGrid } from "../ui/SVGDecorations";
 
 const stats = [
   {
@@ -17,7 +18,7 @@ const stats = [
   {
     value: 10,
     suffix: "x",
-    label: "Mas rapido que lo tradicional",
+    label: "Más rápido que lo tradicional",
   },
   {
     value: 24,
@@ -42,6 +43,9 @@ const itemVariants = {
 export default function Stats() {
   return (
     <section className="relative bg-black py-16 lg:py-20 overflow-hidden">
+      {/* Subtle hex pattern background */}
+      <HexGrid opacity={0.02} />
+
       {/* Top/bottom gradient borders */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00E5FF]/30 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#1f41bb]/30 to-transparent" />

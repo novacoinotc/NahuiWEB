@@ -6,7 +6,7 @@ import { SectionHeader, NeuralNetwork } from "../ui";
 const techStack = [
   {
     name: "Vercel",
-    description: "Frontend deployment. Performance extremo, edge computing, previews automaticos.",
+    description: "Frontend deployment. Performance extremo, edge computing, previews automáticos.",
     logo: (
       <svg viewBox="0 0 76 65" fill="currentColor" className="w-10 h-10">
         <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" />
@@ -15,7 +15,7 @@ const techStack = [
   },
   {
     name: "Railway",
-    description: "Backend moderno. Deploy instantaneo, escalado automatico, zero DevOps.",
+    description: "Backend moderno. Deploy instantáneo, escalado automático, zero DevOps.",
     logo: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10">
         <path d="M.113 10.27A.963.963 0 0 0 0 10.753v2.494c0 .534.432.966.966.966h3.08a20.32 20.32 0 0 0 .474-3.944zm4.96 0c-.027 1.378-.174 2.704-.44 3.944h3.268c.534 0 .966-.432.966-.966v-2.494a.95.95 0 0 0-.113-.483zm4.76 0a.963.963 0 0 0-.113.483v2.494c0 .534.432.966.966.966h3.08a20.32 20.32 0 0 0 .474-3.944zm4.96 0c-.027 1.378-.174 2.704-.44 3.944h3.268c.534 0 .966-.432.966-.966v-2.494a.95.95 0 0 0-.113-.483zm4.76 0a.963.963 0 0 0-.113.483v2.494c0 .534.432.966.966.966h3.08a20.32 20.32 0 0 0 .474-3.944zm4.96 0c-.027 1.378-.174 2.704-.44 3.944h2.701c.534 0 .966-.432.966-.966v-2.494c0-.17-.04-.333-.113-.483z" />
@@ -24,7 +24,7 @@ const techStack = [
   },
   {
     name: "Neon",
-    description: "Base de datos serverless. PostgreSQL que escala a cero y crece sin limites.",
+    description: "Base de datos serverless. PostgreSQL que escala a cero y crece sin límites.",
     logo: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10">
         <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z" />
@@ -43,7 +43,7 @@ const techStack = [
   },
   {
     name: "Google Analytics 4",
-    description: "Medicion profesional. Eventos, embudos, audiencias, todo configurado correctamente.",
+    description: "Medición profesional. Eventos, embudos, audiencias, todo configurado correctamente.",
     logo: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10">
         <path d="M22.84 2.998v18.004c0 1.103-.895 1.998-1.998 1.998H3.158c-1.103 0-1.998-.895-1.998-1.998V2.998C1.16 1.895 2.055 1 3.158 1h17.684c1.103 0 1.998.895 1.998 1.998zM12 20.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm6-2.5V7a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm-8 0v-7a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1z" />
@@ -52,7 +52,7 @@ const techStack = [
   },
   {
     name: "Google Ads",
-    description: "Adquisicion. Tracking de conversiones, remarketing, integracion completa.",
+    description: "Adquisición. Tracking de conversiones, remarketing, integración completa.",
     logo: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10">
         <path d="M12.24 8.14L5.28 21.36C4.93 22.05 4.09 22.32 3.39 21.97L1.48 21.05C0.79 20.7 0.52 19.86 0.87 19.17L7.84 5.95C8.19 5.26 9.03 4.99 9.72 5.34L11.63 6.26C12.33 6.61 12.59 7.45 12.24 8.14zM22.13 15.67L18.11 8.03C17.76 7.34 17.08 6.87 16.3 6.87C15.52 6.87 14.84 7.34 14.49 8.03L11.05 14.49L12.27 16.95L14.76 12.05L18.78 19.69C18.93 19.94 18.86 20.27 18.61 20.42L17.11 21.32C16.86 21.47 16.53 21.4 16.38 21.15L14.3 17.42L11.75 22.45C11.4 23.14 10.56 23.41 9.87 23.06L8.49 22.39L15.11 10.18L17.44 14.67H22.13V15.67z" />
@@ -88,9 +88,9 @@ export default function TechStack() {
           transition={{ duration: 0.6 }}
         >
           <SectionHeader
-            eyebrow="Stack tecnologico"
+            eyebrow="Stack tecnológico"
             title="Infraestructura de clase mundial"
-            description="Las mismas herramientas que usan Airbnb, Notion y las startups mas exitosas del mundo. No por seguir tendencias: porque son objetivamente superiores."
+            description="Las mismas herramientas que usan Airbnb, Notion y las startups más exitosas del mundo. No por seguir tendencias: porque son objetivamente superiores."
             centered
           />
         </motion.div>

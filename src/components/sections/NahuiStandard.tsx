@@ -6,15 +6,15 @@ import { SectionHeader } from "../ui";
 const standards = [
   {
     number: "01",
-    title: "SEO tecnico perfecto",
+    title: "SEO técnico perfecto",
     description:
-      "Meta tags, structured data, sitemap, robots.txt, Core Web Vitals optimizados. Sin checklist generico: implementacion real.",
+      "Meta tags, structured data, sitemap, robots.txt, Core Web Vitals optimizados. Sin checklist genérico: implementación real.",
   },
   {
     number: "02",
-    title: "Medicion profesional",
+    title: "Medición profesional",
     description:
-      "Google Analytics 4, eventos personalizados, embudos de conversion, pixeles de Meta y Google Ads configurados correctamente.",
+      "Google Analytics 4, eventos personalizados, embudos de conversión, píxeles de Meta y Google Ads configurados correctamente.",
   },
   {
     number: "03",
@@ -26,17 +26,17 @@ const standards = [
     number: "04",
     title: "Arquitectura serverless",
     description:
-      "Infraestructura que escala automaticamente. Sin servidores que mantener, sin limites artificiales, costos proporcionales al uso.",
+      "Infraestructura que escala automáticamente. Sin servidores que mantener, sin límites artificiales, costos proporcionales al uso.",
   },
   {
     number: "05",
     title: "Performance extremo",
     description:
-      "Lighthouse 95+ garantizado. Carga instantanea, experiencia fluida, mejor posicionamiento en Google.",
+      "Lighthouse 95+ garantizado. Carga instantánea, experiencia fluida, mejor posicionamiento en Google.",
   },
   {
     number: "06",
-    title: "Codigo limpio y documentado",
+    title: "Código limpio y documentado",
     description:
       "Arquitectura profesional lista para que tu equipo interno o cualquier desarrollador pueda continuar el proyecto.",
   },
@@ -66,9 +66,9 @@ export default function NahuiStandard() {
           transition={{ duration: 0.6 }}
         >
           <SectionHeader
-            eyebrow="Estandar Nahui"
+            eyebrow="Estándar Nahui"
             title="Lo que otros cobran extra, nosotros lo incluimos siempre"
-            description="Cada proyecto que sale de Nahui Labs cumple con un estandar tecnico que garantiza rendimiento, medicion y escalabilidad desde el primer deploy."
+            description="Cada proyecto que sale de Nahui Labs cumple con un estándar técnico que garantiza rendimiento, medición y escalabilidad desde el primer deploy."
           />
         </motion.div>
 

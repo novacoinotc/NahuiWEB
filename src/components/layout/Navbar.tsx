@@ -8,8 +8,8 @@ import Logo from "./Logo";
 
 const navLinks = [
   { href: "#que-hacemos", label: "Soluciones", sectionId: "que-hacemos" },
-  { href: "#diferenciadores", label: "Por que nosotros", sectionId: "diferenciadores" },
-  { href: "#proceso", label: "Como funciona", sectionId: "proceso" },
+  { href: "#diferenciadores", label: "Por qué nosotros", sectionId: "diferenciadores" },
+  { href: "#proceso", label: "Cómo funciona", sectionId: "proceso" },
 ];
 
 export default function Navbar() {
@@ -123,7 +123,7 @@ export default function Navbar() {
           <motion.button
             className="md:hidden text-white p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? "Cerrar menu" : "Abrir menu"}
+            aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
             whileTap={{ scale: 0.9 }}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

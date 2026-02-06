@@ -9,38 +9,38 @@ const painPoints = [
   {
     icon: Clock,
     problem: "Meses de espera",
-    solution: "Entrega en dias o semanas",
-    description: "Mientras otros tardan 6 meses, nosotros entregamos versiones funcionales en dias gracias a nuestra metodologia potenciada por IA.",
+    solution: "Entrega en días o semanas",
+    description: "Mientras otros tardan 6 meses, nosotros entregamos versiones funcionales en días gracias a nuestra metodología potenciada por IA.",
   },
   {
     icon: DollarSign,
     problem: "Costos desorbitados",
     solution: "Precios justos y transparentes",
-    description: "Sin sorpresas. Te decimos exactamente cuanto cuesta antes de empezar. Y al ser mas rapidos, cuesta menos.",
+    description: "Sin sorpresas. Te decimos exactamente cuánto cuesta antes de empezar. Y al ser más rápidos, cuesta menos.",
   },
   {
     icon: Brain,
     problem: "No te entienden",
     solution: "Hablamos tu idioma",
-    description: "Nada de jerga tecnica. Te explicamos todo de forma simple y te involucramos en cada paso del proceso.",
+    description: "Nada de jerga técnica. Te explicamos todo de forma simple y te involucramos en cada paso del proceso.",
   },
   {
     icon: Headphones,
-    problem: "Desaparecen despues",
+    problem: "Desaparecen después",
     solution: "Soporte continuo",
-    description: "No te dejamos solo. Despues de entregar, seguimos aqui para ajustes, mejoras y soporte tecnico.",
+    description: "No te dejamos solo. Después de entregar, seguimos aquí para ajustes, mejoras y soporte técnico.",
   },
   {
     icon: Shield,
-    problem: "Software generico",
+    problem: "Software genérico",
     solution: "100% a tu medida",
-    description: "Nada de plantillas ni soluciones prefabricadas. Cada linea de codigo se escribe pensando en TU negocio.",
+    description: "Nada de plantillas ni soluciones prefabricadas. Cada línea de código se escribe pensando en TU negocio.",
   },
   {
     icon: Zap,
-    problem: "Tecnologia obsoleta",
-    solution: "Lo ultimo en tecnologia",
-    description: "Usamos las herramientas mas modernas del mercado. Tu software nace preparado para el futuro.",
+    problem: "Tecnología obsoleta",
+    solution: "Lo último en tecnología",
+    description: "Usamos las herramientas más modernas del mercado. Tu software nace preparado para el futuro.",
   },
 ];
 
@@ -71,9 +71,9 @@ export default function Differentiators() {
           transition={{ duration: 0.6 }}
         >
           <SectionHeader
-            eyebrow="Por que elegirnos"
-            title="Olvidate de los problemas del desarrollo tradicional"
-            description="Sabemos lo frustrante que es buscar quien te haga un software. Por eso cambiamos las reglas del juego."
+            eyebrow="Por qué elegirnos"
+            title="Olvídate de los problemas del desarrollo tradicional"
+            description="Sabemos lo frustrante que es buscar quién te haga un software. Por eso cambiamos las reglas del juego."
             centered
           />
         </motion.div>

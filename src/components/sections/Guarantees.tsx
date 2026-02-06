@@ -8,15 +8,15 @@ import { HexGrid } from "../ui/SVGDecorations";
 const guarantees = [
   {
     icon: Shield,
-    title: "Garantia de satisfaccion",
+    title: "Garantía de satisfacción",
     description:
-      "Si no estas 100% satisfecho con el resultado, trabajamos hasta que lo estes. Sin costos adicionales.",
+      "Si no estás 100% satisfecho con el resultado, trabajamos hasta que lo estés. Sin costos adicionales.",
   },
   {
     icon: RefreshCcw,
     title: "Revisiones ilimitadas",
     description:
-      "Durante el desarrollo, puedes pedir todos los cambios que necesites. Tu vision es nuestra prioridad.",
+      "Durante el desarrollo, puedes pedir todos los cambios que necesites. Tu visión es nuestra prioridad.",
   },
   {
     icon: Clock,
@@ -26,21 +26,21 @@ const guarantees = [
   },
   {
     icon: FileCheck,
-    title: "Codigo tuyo, siempre",
+    title: "Código tuyo, siempre",
     description:
-      "Todo el codigo fuente te pertenece. Sin ataduras, sin licencias ocultas, sin sorpresas.",
+      "Todo el código fuente te pertenece. Sin ataduras, sin licencias ocultas, sin sorpresas.",
   },
   {
     icon: Headphones,
     title: "Soporte post-lanzamiento",
     description:
-      "30 dias de soporte gratuito despues de entregar. Resolvemos cualquier bug o ajuste menor.",
+      "30 días de soporte gratuito después de entregar. Resolvemos cualquier bug o ajuste menor.",
   },
   {
     icon: Lock,
     title: "Confidencialidad total",
     description:
-      "Firmamos NDA si lo necesitas. Tu idea esta segura con nosotros.",
+      "Firmamos NDA si lo necesitas. Tu idea está segura con nosotros.",
   },
 ];
 
@@ -105,9 +105,9 @@ export default function Guarantees() {
           transition={{ duration: 0.6 }}
         >
           <SectionHeader
-            eyebrow="Nuestras garantias"
+            eyebrow="Nuestras garantías"
             title="Trabajamos para que tengas cero riesgos"
-            description="Entendemos que confiar tu proyecto a alguien nuevo es una decision importante. Por eso te damos garantias reales, no solo promesas."
+            description="Entendemos que confiar tu proyecto a alguien nuevo es una decisión importante. Por eso te damos garantías reales, no solo promesas."
             centered
           />
         </motion.div>

@@ -9,30 +9,30 @@ const steps = [
   {
     number: "01",
     icon: MessageSquare,
-    title: "Cuentanos tu idea",
+    title: "Cuéntanos tu idea",
     description:
-      "Una llamada de 30 minutos donde nos explicas que necesitas. Sin tecnicismos, solo cuentanos tu problema y nosotros lo traducimos a solucion.",
+      "Una llamada de 30 minutos donde nos explicas qué necesitas. Sin tecnicismos, solo cuéntanos tu problema y nosotros lo traducimos a solución.",
   },
   {
     number: "02",
     icon: FileText,
     title: "Te enviamos propuesta",
     description:
-      "En 24-48 horas recibiras un documento claro con: que vamos a construir, cuanto cuesta y cuando lo tendras listo. Sin letras pequeñas.",
+      "En 24-48 horas recibirás un documento claro con: qué vamos a construir, cuánto cuesta y cuándo lo tendrás listo. Sin letras pequeñas.",
   },
   {
     number: "03",
     icon: Code,
     title: "Construimos tu software",
     description:
-      "Nuestro equipo + IA se ponen a trabajar. Te mostramos avances constantemente para que veas como cobra vida tu idea.",
+      "Nuestro equipo + IA se ponen a trabajar. Te mostramos avances constantemente para que veas cómo cobra vida tu idea.",
   },
   {
     number: "04",
     icon: Rocket,
     title: "Lanzamos juntos",
     description:
-      "Tu software sale al mundo. Te ensenamos a usarlo, te damos soporte y nos aseguramos de que todo funcione perfecto.",
+      "Tu software sale al mundo. Te enseñamos a usarlo, te damos soporte y nos aseguramos de que todo funcione perfecto.",
   },
 ];
 
@@ -64,9 +64,9 @@ export default function Process() {
           transition={{ duration: 0.6 }}
         >
           <SectionHeader
-            eyebrow="Como funciona"
+            eyebrow="Cómo funciona"
             title="De tu idea a software funcionando en 4 pasos"
-            description="Un proceso simple y transparente. Tu siempre sabes en que etapa estamos y que sigue."
+            description="Un proceso simple y transparente. Tú siempre sabes en qué etapa estamos y qué sigue."
             centered
           />
         </motion.div>

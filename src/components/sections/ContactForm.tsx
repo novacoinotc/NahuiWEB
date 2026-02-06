@@ -1,16 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Send, CheckCircle, Clock, Shield, Headphones, Bitcoin } from "lucide-react";
+import { Send, CheckCircle, Clock, Shield, Headphones, CreditCard } from "lucide-react";
 import { Button, AnimatedOrbs, FloatingParticles } from "../ui";
 import { HexGrid } from "../ui/SVGDecorations";
 import { useState } from "react";
 
 const benefits = [
   { icon: Clock, text: "Respuesta en menos de 24 horas" },
-  { icon: Shield, text: "Tu informacion 100% confidencial" },
+  { icon: Shield, text: "Tu información 100% confidencial" },
   { icon: Headphones, text: "Llamada sin compromiso" },
-  { icon: Bitcoin, text: "Aceptamos pagos tradicionales y criptomonedas" },
+  { icon: CreditCard, text: "Pagos flexibles: transferencia, tarjeta o crypto" },
 ];
 
 export default function ContactForm() {
@@ -82,8 +82,8 @@ export default function ContactForm() {
               ¡Mensaje recibido!
             </h2>
             <p className="text-gray-400 font-body mb-8">
-              Gracias por contactarnos. Nuestro equipo revisara tu proyecto y te contactaremos
-              en las proximas 24 horas para agendar una llamada.
+              Gracias por contactarnos. Nuestro equipo revisará tu proyecto y te contactaremos
+              en las próximas 24 horas para agendar una llamada.
             </p>
             <p className="text-[#00E5FF] font-body">
               Revisa tu correo (incluyendo spam) para nuestra respuesta.
@@ -116,7 +116,7 @@ export default function ContactForm() {
               ¿Listo para convertir tu idea en realidad?
             </h2>
             <p className="text-gray-400 mb-8 font-body">
-              Cuentanos sobre tu proyecto y recibe una propuesta personalizada sin compromiso.
+              Cuéntanos sobre tu proyecto y recibe una propuesta personalizada sin compromiso.
               No importa si apenas tienes una idea o ya sabes exactamente lo que necesitas.
             </p>
 
@@ -136,7 +136,7 @@ export default function ContactForm() {
                 ¿Prefieres hablar directamente?
               </p>
               <p className="text-gray-400 text-sm font-body">
-                Escribenos a{" "}
+                Escríbenos a{" "}
                 <a href="mailto:hola@nahuilabs.com" className="text-[#00E5FF] hover:underline">
                   hola@nahuilabs.com
                 </a>
@@ -199,7 +199,7 @@ export default function ContactForm() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                   <div>
                     <label htmlFor="phone" className="block text-sm text-gray-400 mb-2 font-body">
-                      Telefono / WhatsApp
+                      Teléfono / WhatsApp
                     </label>
                     <input
                       type="tel"
@@ -229,7 +229,7 @@ export default function ContactForm() {
 
                 <div className="mb-4">
                   <label htmlFor="projectType" className="block text-sm text-gray-400 mb-2 font-body">
-                    ¿Que tipo de software necesitas? *
+                    ¿Qué tipo de software necesitas? *
                   </label>
                   <select
                     id="projectType"
@@ -239,19 +239,19 @@ export default function ContactForm() {
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-[#0B0E14] border border-white/10 rounded-lg text-white font-body focus:outline-none focus:border-[#00E5FF] transition-colors"
                   >
-                    <option value="">Selecciona una opcion</option>
-                    <option value="mobile-app">App Movil (iOS/Android)</option>
+                    <option value="">Selecciona una opción</option>
+                    <option value="mobile-app">App Móvil (iOS/Android)</option>
                     <option value="web-platform">Plataforma Web</option>
                     <option value="enterprise-system">Sistema Empresarial (ERP/CRM)</option>
                     <option value="ecommerce">E-commerce / Tienda Online</option>
-                    <option value="automation">Automatizacion / Integraciones</option>
+                    <option value="automation">Automatización / Integraciones</option>
                     <option value="other">Otro / No estoy seguro</option>
                   </select>
                 </div>
 
                 <div className="mb-6">
                   <label htmlFor="message" className="block text-sm text-gray-400 mb-2 font-body">
-                    Cuentanos sobre tu proyecto *
+                    Cuéntanos sobre tu proyecto *
                   </label>
                   <textarea
                     id="message"
@@ -301,8 +301,8 @@ export default function ContactForm() {
                 </Button>
 
                 <p className="text-xs text-gray-500 text-center mt-4 font-body">
-                  Al enviar, aceptas nuestra politica de privacidad.
-                  No compartimos tu informacion con terceros.
+                  Al enviar, aceptas nuestra política de privacidad.
+                  No compartimos tu información con terceros.
                 </p>
               </div>
             </form>

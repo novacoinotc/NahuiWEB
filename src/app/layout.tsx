@@ -12,13 +12,13 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Nahui Labs | Desarrollo de Software a Medida con IA",
   description:
-    "Convertimos tu idea en software funcionando en dias, no meses. Apps moviles, plataformas web, sistemas empresariales. Desarrollo 100% a medida impulsado por Inteligencia Artificial.",
+    "Convertimos tu idea en software funcionando en días, no meses. Apps móviles, plataformas web, sistemas empresariales. Desarrollo 100% a medida impulsado por Inteligencia Artificial.",
   keywords:
-    "desarrollo software a medida, apps moviles, desarrollo web, sistemas empresariales, software personalizado, IA, inteligencia artificial, programadores, desarrollo aplicaciones",
+    "desarrollo software a medida, apps móviles, desarrollo web, sistemas empresariales, software personalizado, IA, inteligencia artificial, programadores, desarrollo aplicaciones",
   openGraph: {
-    title: "Nahui Labs | Software a Medida en Dias, No Meses",
+    title: "Nahui Labs | Software a Medida en Días, No Meses",
     description:
-      "Apps moviles, plataformas web, sistemas empresariales. Desarrollo 100% a tu medida, impulsado por IA. Cotiza tu proyecto sin compromiso.",
+      "Apps móviles, plataformas web, sistemas empresariales. Desarrollo 100% a tu medida, impulsado por IA. Cotiza tu proyecto sin compromiso.",
     type: "website",
     locale: "es_MX",
     siteName: "Nahui Labs",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nahui Labs | Desarrollo de Software a Medida",
     description:
-      "Convertimos tu idea en software funcionando en dias. Apps, plataformas, sistemas. 100% a medida con IA.",
+      "Convertimos tu idea en software funcionando en días. Apps, plataformas, sistemas. 100% a medida con IA.",
   },
   robots: {
     index: true,

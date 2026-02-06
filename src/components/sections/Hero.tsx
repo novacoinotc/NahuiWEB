@@ -7,15 +7,15 @@ import CursorNetwork from "../ui/CursorNetwork";
 import { CodeBrackets } from "../ui/SVGDecorations";
 
 const trustIndicators = [
-  "Software en dias, no meses",
+  "Software en días, no meses",
   "100% a tu medida",
   "Impulsado por IA",
-  "Pagos en crypto",
+  "Pagos flexibles",
   "Servicio internacional",
 ];
 
 const subtitlePhrases = [
-  "Apps moviles, plataformas web, sistemas empresariales...",
+  "Apps móviles, plataformas web, sistemas empresariales...",
   "Automatizaciones, e-commerce, integraciones con IA...",
   "Software 100% a tu medida, con la velocidad que solo la IA puede ofrecer.",
 ];
@@ -70,7 +70,7 @@ export default function Hero() {
       <CodeBrackets side="right" className="right-4 lg:right-12" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-32 text-center">
-        {/* Mexico + Crypto badges */}
+        {/* Badges */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -79,7 +79,7 @@ export default function Hero() {
         >
           <Badge className="mb-0">Desarrollo de Software Impulsado por IA</Badge>
           <Badge variant="filled" className="mb-0 text-xs">
-            Desde Mexico para el mundo
+            Desde México para el mundo
           </Badge>
         </motion.div>
 
@@ -90,7 +90,7 @@ export default function Hero() {
           className="text-3xl lg:text-5xl font-bold text-white max-w-4xl mx-auto leading-tight mb-8 font-heading"
         >
           Convertimos tu idea en software funcionando{" "}
-          <span className="text-nahui-gradient">en dias, no meses</span>
+          <span className="text-nahui-gradient">en días, no meses</span>
         </motion.h1>
 
         {/* Typing effect subtitle */}
@@ -116,11 +116,11 @@ export default function Hero() {
             Quiero mi software a medida
           </Button>
           <Button variant="secondary" size="default" href="#que-hacemos">
-            Ver que podemos crear
+            Ver qué podemos crear
           </Button>
         </motion.div>
 
-        {/* Crypto badge */}
+        {/* Quality badge */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -133,7 +133,7 @@ export default function Hero() {
               <path d="M2 17L12 22L22 17" stroke="#00E5FF" strokeWidth="1.5" strokeLinejoin="round" />
               <path d="M2 12L12 17L22 12" stroke="#00E5FF" strokeWidth="1.5" strokeLinejoin="round" />
             </svg>
-            <span className="text-xs text-gray-300 font-body">Aceptamos Crypto</span>
+            <span className="text-xs text-gray-300 font-body">Calidad y velocidad garantizadas</span>
           </div>
         </motion.div>
 

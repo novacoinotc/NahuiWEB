@@ -9,7 +9,7 @@ import { CircuitLines } from "../ui/SVGDecorations";
 const solutions = [
   {
     icon: Smartphone,
-    title: "Apps Moviles",
+    title: "Apps Móviles",
     description:
       "iOS y Android. Desde apps de delivery hasta plataformas de servicios. Tu negocio en el bolsillo de tus clientes.",
     examples: "Uber, Rappi, Airbnb... pero para tu negocio",
@@ -26,20 +26,20 @@ const solutions = [
     title: "Sistemas Empresariales",
     description:
       "Software que organiza tu empresa: inventarios, ventas, empleados, reportes. Todo conectado y automatizado.",
-    examples: "ERPs, CRMs, sistemas de gestion",
+    examples: "ERPs, CRMs, sistemas de gestión",
   },
   {
     icon: Cpu,
     title: "Automatizaciones",
     description:
       "Deja que el software haga el trabajo repetitivo. Conectamos tus herramientas para que trabajen solas.",
-    examples: "Integraciones, bots, flujos automaticos",
+    examples: "Integraciones, bots, flujos automáticos",
   },
   {
     icon: ShoppingCart,
     title: "E-commerce a Medida",
     description:
-      "Tiendas online que se adaptan a tu forma de vender, no al reves. Sin limitaciones de plantillas.",
+      "Tiendas online que se adaptan a tu forma de vender, no al revés. Sin limitaciones de plantillas.",
     examples: "Marketplaces, tiendas B2B, suscripciones",
   },
   {
@@ -84,9 +84,9 @@ export default function WhatWeDo() {
           transition={{ duration: 0.6 }}
         >
           <SectionHeader
-            eyebrow="Que podemos crear para ti"
+            eyebrow="Qué podemos crear para ti"
             title="Si lo puedes imaginar, lo podemos construir"
-            description="No importa que tan compleja sea tu idea. Nuestro equipo de desarrolladores, potenciado por Inteligencia Artificial, puede crear cualquier tipo de software que tu negocio necesite."
+            description="No importa qué tan compleja sea tu idea. Nuestro equipo de desarrolladores, potenciado por Inteligencia Artificial, puede crear cualquier tipo de software que tu negocio necesite."
             centered
           />
         </motion.div>
@@ -123,7 +123,7 @@ export default function WhatWeDo() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center text-gray-500 mt-12 font-body"
         >
-          Y mucho mas... Si no ves lo que buscas, preguntanos. Probablemente ya lo hemos hecho.
+          Y mucho más... Si no ves lo que buscas, pregúntanos. Probablemente ya lo hemos hecho.
         </motion.p>
       </div>
     </section>

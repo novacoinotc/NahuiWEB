@@ -7,14 +7,14 @@ import { CircuitLines } from "../ui/SVGDecorations";
 
 const navigation = [
   { label: "Soluciones", href: "#que-hacemos" },
-  { label: "Por que nosotros", href: "#diferenciadores" },
-  { label: "Como funciona", href: "#proceso" },
+  { label: "Por qué nosotros", href: "#diferenciadores" },
+  { label: "Cómo funciona", href: "#proceso" },
   { label: "Contacto", href: "#contacto" },
 ];
 
 const legal = [
   { label: "Aviso de privacidad", href: "/privacidad" },
-  { label: "Terminos de servicio", href: "/terminos" },
+  { label: "Términos de servicio", href: "/terminos" },
 ];
 
 const social = [
@@ -26,9 +26,7 @@ const social = [
 const paymentMethods = [
   "Transferencia",
   "Tarjeta",
-  "Bitcoin",
-  "USDT",
-  "Ethereum",
+  "Crypto",
 ];
 
 export default function Footer() {
@@ -51,17 +49,17 @@ export default function Footer() {
               Desarrollo de software a medida, impulsado por Inteligencia Artificial.
             </p>
             <p className="text-gray-600 text-xs mb-4">
-              Tu idea. Nuestro codigo. Resultados reales.
+              Tu idea. Nuestro código. Resultados reales.
             </p>
             <p className="text-[#00E5FF]/60 text-xs font-medium">
-              Hecho en Mexico | Internacional | Crypto-friendly
+              Hecho en México | Servicio internacional
             </p>
           </div>
 
           {/* Navigation */}
           <div>
             <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4 font-heading">
-              Navegacion
+              Navegación
             </h3>
             <ul className="space-y-3">
               {navigation.map((item) => (
@@ -130,7 +128,7 @@ export default function Footer() {
 
         {/* Payment methods */}
         <div className="pb-6 mb-6 border-b border-[#1C1F26]">
-          <p className="text-gray-600 text-xs mb-3 uppercase tracking-wider">Metodos de pago aceptados</p>
+          <p className="text-gray-600 text-xs mb-3 uppercase tracking-wider">Métodos de pago aceptados</p>
           <div className="flex flex-wrap gap-2">
             {paymentMethods.map((method) => (
               <span
@@ -155,7 +153,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Nahui Labs. Todos los derechos reservados.
           </p>
           <p className="text-gray-600 text-xs">
-            Mexico | Internacional | Crypto-friendly
+            México | Servicio internacional
           </p>
         </motion.div>
       </div>

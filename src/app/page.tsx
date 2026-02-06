@@ -6,8 +6,10 @@ import {
   Differentiators,
   Industries,
   Process,
+  NahuiStandard,
   GlobalPresence,
   Guarantees,
+  FinalCTA,
   ContactForm,
 } from "@/components/sections";
 import ClientShell from "@/components/layout/ClientShell";
@@ -17,31 +19,37 @@ export default function Home() {
     <ClientShell>
       <Navbar />
       <main className="relative">
-        {/* 1. Hook - Captura atencion */}
+        {/* 1. Hook — Captura atención */}
         <Hero />
 
-        {/* 2. Social proof - Numeros que validan */}
+        {/* 2. Social proof — Números que validan */}
         <Stats />
 
-        {/* 3. Que hacemos - Muestra posibilidades */}
+        {/* 3. Qué hacemos — Muestra posibilidades */}
         <WhatWeDo />
 
-        {/* 4. Por que nosotros - Diferenciadores */}
+        {/* 4. Por qué nosotros — Diferenciadores */}
         <Differentiators />
 
-        {/* 5. Industrias - Versatilidad */}
+        {/* 5. Industrias — Versatilidad */}
         <Industries />
 
-        {/* 6. Proceso - Como funciona */}
+        {/* 6. Proceso — Cómo funciona */}
         <Process />
 
-        {/* 7. Presencia Global - Mexico + Internacional + Crypto */}
+        {/* 7. Estándar Nahui — Valor incluido */}
+        <NahuiStandard />
+
+        {/* 8. Presencia Global — Servicio internacional */}
         <GlobalPresence />
 
-        {/* 8. Garantias - Reduce riesgo */}
+        {/* 9. Garantías — Reduce riesgo */}
         <Guarantees />
 
-        {/* 9. Formulario - Captura lead */}
+        {/* 10. CTA final — Último empujón */}
+        <FinalCTA />
+
+        {/* 11. Formulario — Captura lead */}
         <ContactForm />
       </main>
       <Footer />

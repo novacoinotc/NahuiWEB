@@ -7,14 +7,14 @@ import { Button, SectionHeader } from "../ui";
 const services = [
   {
     tier: "STARTER",
-    title: "Landing de conversion",
+    title: "Landing de conversión",
     description:
-      "Pagina unica de alto impacto para lanzar, validar o vender un producto o servicio.",
+      "Página única de alto impacto para lanzar, validar o vender un producto o servicio.",
     features: [
-      "Diseno futurista personalizado",
-      "Copywriting estrategico",
-      "SEO tecnico completo",
-      "Medicion y analytics configurados",
+      "Diseño futurista personalizado",
+      "Copywriting estratégico",
+      "SEO técnico completo",
+      "Medición y analytics configurados",
       "Formulario integrado con CRM",
       "Responsive perfecto",
       "Deploy en Vercel",
@@ -26,13 +26,13 @@ const services = [
     tier: "GROWTH",
     title: "Producto web completo",
     description:
-      "Aplicacion web o sitio multi-pagina con funcionalidades a medida y arquitectura escalable.",
+      "Aplicación web o sitio multi-página con funcionalidades a medida y arquitectura escalable.",
     features: [
       "Todo lo de Starter +",
-      "Multiples paginas/vistas",
+      "Múltiples páginas/vistas",
       "Base de datos serverless",
-      "Autenticacion si aplica",
-      "Panel de administracion",
+      "Autenticación si aplica",
+      "Panel de administración",
       "API personalizada",
       "Integraciones avanzadas",
       "Arquitectura para escalar",
@@ -44,15 +44,15 @@ const services = [
     tier: "SCALE",
     title: "Plataforma a medida",
     description:
-      "Sistemas complejos, marketplaces, SaaS, plataformas con logica de negocio avanzada.",
+      "Sistemas complejos, marketplaces, SaaS, plataformas con lógica de negocio avanzada.",
     features: [
       "Todo lo de Growth +",
       "Arquitectura de microservicios",
       "Multi-tenancy si aplica",
       "Integraciones enterprise",
       "Alta disponibilidad",
-      "Soporte tecnico dedicado",
-      "Roadmap de evolucion",
+      "Soporte técnico dedicado",
+      "Roadmap de evolución",
     ],
     cta: "Agendar llamada",
     highlighted: false,
@@ -118,7 +118,7 @@ export default function Services() {
             >
               {service.highlighted && (
                 <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-l from-[#1f41bb] to-[#00E5FF] text-black px-4 py-1 rounded-full text-sm font-semibold font-body">
-                  Mas popular
+                  Más popular
                 </span>
               )}
 

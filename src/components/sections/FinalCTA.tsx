@@ -5,7 +5,7 @@ import { Button, FloatingParticles, AnimatedOrbs } from "../ui";
 
 export default function FinalCTA() {
   return (
-    <section id="contacto" className="relative bg-[#0B0E14] py-32 overflow-hidden">
+    <section className="relative bg-[#0B0E14] py-32 overflow-hidden">
       {/* Animated background */}
       <AnimatedOrbs />
       <FloatingParticles count={25} />
@@ -23,7 +23,7 @@ export default function FinalCTA() {
 
           <p className="text-base text-gray-400 mb-10 font-body">
             Agenda una llamada de 30 minutos con nuestro equipo. Analizamos tu
-            proyecto, definimos el alcance real y te mostramos exactamente como
+            proyecto, definimos el alcance real y te mostramos exactamente cómo
             podemos ayudarte. Sin pitch de ventas. Sin compromiso.
           </p>
 
@@ -31,8 +31,8 @@ export default function FinalCTA() {
             {/* Glow effect behind button */}
             <div className="absolute inset-0 bg-gradient-to-l from-[#1f41bb] to-[#00E5FF] blur-2xl opacity-20 rounded-xl" />
 
-            <Button variant="primary" size="large" className="relative glow-gradient">
-              Agendar llamada estrategica
+            <Button variant="primary" size="large" href="#contacto" className="relative glow-gradient">
+              Agendar llamada estratégica
             </Button>
           </div>
 

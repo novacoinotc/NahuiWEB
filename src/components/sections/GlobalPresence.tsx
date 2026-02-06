@@ -1,29 +1,29 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Globe, Bitcoin, Languages, Clock } from "lucide-react";
+import { Globe, CreditCard, Languages, Clock } from "lucide-react";
 import { HexGrid, AnimatedGlobe } from "../ui/SVGDecorations";
 
 const badges = [
   {
     icon: Globe,
     title: "Servicio Internacional",
-    description: "Clientes en Mexico, LATAM, USA y Europa",
-  },
-  {
-    icon: Bitcoin,
-    title: "Aceptamos Crypto",
-    description: "Bitcoin, Ethereum, USDT y mas",
+    description: "Clientes en México, LATAM, USA y Europa",
   },
   {
     icon: Languages,
-    title: "Espanol e Ingles",
-    description: "Comunicacion en tu idioma preferido",
+    title: "Español e Inglés",
+    description: "Comunicación clara en tu idioma preferido",
   },
   {
     icon: Clock,
     title: "Cualquier zona horaria",
-    description: "Nos adaptamos a tu horario",
+    description: "Nos adaptamos a tu horario sin importar dónde estés",
+  },
+  {
+    icon: CreditCard,
+    title: "Pagos flexibles",
+    description: "Transferencia, tarjeta o criptomonedas",
   },
 ];
 
@@ -70,11 +70,11 @@ export default function GlobalPresence() {
                 Presencia Global
               </span>
               <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4 font-heading">
-                Basados en Mexico, creando para el mundo
+                Basados en México, creando para el mundo
               </h2>
               <p className="text-gray-400 mb-8 font-body">
-                No importa donde estes. Trabajamos con clientes de todo el mundo,
-                con comunicacion clara y pagos flexibles — incluyendo criptomonedas.
+                No importa dónde estés. Trabajamos con clientes en LATAM, USA y Europa,
+                con comunicación bilingüe, flexibilidad horaria y múltiples opciones de pago.
               </p>
             </motion.div>
 
