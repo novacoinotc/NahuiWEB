@@ -278,3 +278,47 @@ h1, h2, h3, h4, h5, h6 {
   background: #ff4444;
   animation: strike 0.8s ease-out forwards;
 }
+
+/* === ACCESSIBILITY: Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-glow-pulse,
+  .animate-shimmer,
+  .animate-float,
+  .animate-typing-cursor,
+  .border-gradient-animated::before {
+    animation: none !important;
+  }
+}
+
+/* === SELECTION COLOR === */
+::selection {
+  background: rgba(0, 229, 255, 0.3);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: rgba(0, 229, 255, 0.3);
+  color: #ffffff;
+}
+
+/* === SMOOTH IMAGE LOADING === */
+img {
+  transition: opacity 0.3s ease;
+}
+
+img[loading] {
+  opacity: 0;
+}
+
+img.loaded {
+  opacity: 1;
+}

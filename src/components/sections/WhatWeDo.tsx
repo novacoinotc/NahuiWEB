@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Smartphone, Globe, Database, Cpu, ShoppingCart, Users } from "lucide-react";
 import { Card, IconBox, SectionHeader, FloatingParticles } from "../ui";
+import TiltCard from "../ui/TiltCard";
 import { CircuitLines } from "../ui/SVGDecorations";
 
 const solutions = [
@@ -99,16 +100,18 @@ export default function WhatWeDo() {
         >
           {solutions.map((solution) => (
             <motion.div key={solution.title} variants={itemVariants}>
-              <Card className="h-full group hover:shadow-[0_0_30px_rgba(0,229,255,0.1)] transition-all duration-500">
-                <div className="group-hover:scale-110 transition-transform duration-300 inline-block">
-                  <IconBox icon={solution.icon} />
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-3 font-heading">
-                  {solution.title}
-                </h3>
-                <p className="text-gray-400 font-body mb-4">{solution.description}</p>
-                <p className="text-sm text-[#00E5FF] font-body">{solution.examples}</p>
-              </Card>
+              <TiltCard tiltAmount={8} className="h-full">
+                <Card className="h-full group hover:shadow-[0_0_30px_rgba(0,229,255,0.1)] transition-all duration-500">
+                  <div className="group-hover:scale-110 transition-transform duration-300 inline-block">
+                    <IconBox icon={solution.icon} />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-3 font-heading">
+                    {solution.title}
+                  </h3>
+                  <p className="text-gray-400 font-body mb-4">{solution.description}</p>
+                  <p className="text-sm text-[#00E5FF] font-body">{solution.examples}</p>
+                </Card>
+              </TiltCard>
             </motion.div>
           ))}
         </motion.div>
