@@ -62,8 +62,12 @@ export default function Differentiators() {
     <section id="diferenciadores" className="relative bg-black py-24 lg:py-32 overflow-hidden">
       <FloatingParticles count={15} />
       <DataStream />
-      {/* Animated DNA decoration */}
-      <div className="absolute right-4 top-16 w-24 h-72 opacity-20 pointer-events-none hidden lg:block">
+      {/* Animated DNA decoration - right */}
+      <div className="absolute right-8 top-12 w-32 h-80 opacity-30 pointer-events-none hidden lg:block">
+        <AnimatedDNA />
+      </div>
+      {/* Animated DNA decoration - left */}
+      <div className="absolute left-4 bottom-12 w-24 h-64 opacity-15 pointer-events-none hidden lg:block">
         <AnimatedDNA />
       </div>
 

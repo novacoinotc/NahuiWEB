@@ -996,6 +996,414 @@ export function AnimatedDNA({ className = "" }: { className?: string }) {
   );
 }
 
+// Animated interlocking gears for Process section
+export function AnimatedGears({ className = "" }: { className?: string }) {
+  return (
+    <div className={`relative ${className}`}>
+      <svg
+        viewBox="0 0 220 200"
+        className="w-full h-full"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="gearGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#1f41bb" stopOpacity="0.4" />
+          </linearGradient>
+          <linearGradient id="gearGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#1f41bb" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#00E5FF" stopOpacity="0.4" />
+          </linearGradient>
+        </defs>
+
+        {/* Large gear */}
+        <motion.g
+          animate={{ rotate: 360 }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          style={{ transformOrigin: "80px 100px" }}
+        >
+          {/* Gear teeth - large */}
+          {Array.from({ length: 12 }, (_, i) => {
+            const angle = (i * 30 * Math.PI) / 180;
+            const innerR = 50;
+            const outerR = 60;
+            const toothWidth = 8;
+            const cx = 80, cy = 100;
+            const cos = Math.cos(angle);
+            const sin = Math.sin(angle);
+            const cosLeft = Math.cos(angle - toothWidth / innerR);
+            const sinLeft = Math.sin(angle - toothWidth / innerR);
+            const cosRight = Math.cos(angle + toothWidth / innerR);
+            const sinRight = Math.sin(angle + toothWidth / innerR);
+            return (
+              <path
+                key={`tooth-lg-${i}`}
+                d={`M${cx + cosLeft * innerR},${cy + sinLeft * innerR} L${cx + cosLeft * outerR},${cy + sinLeft * outerR} L${cx + cosRight * outerR},${cy + sinRight * outerR} L${cx + cosRight * innerR},${cy + sinRight * innerR}`}
+                fill="url(#gearGrad1)"
+                opacity="0.5"
+              />
+            );
+          })}
+          <circle cx="80" cy="100" r="48" fill="none" stroke="#00E5FF" strokeWidth="1.5" opacity="0.3" />
+          <circle cx="80" cy="100" r="38" fill="none" stroke="#00E5FF" strokeWidth="0.8" opacity="0.2" />
+          {/* Inner spokes */}
+          {Array.from({ length: 6 }, (_, i) => {
+            const angle = (i * 60 * Math.PI) / 180;
+            return (
+              <motion.line
+                key={`spoke-lg-${i}`}
+                x1={80 + Math.cos(angle) * 15}
+                y1={100 + Math.sin(angle) * 15}
+                x2={80 + Math.cos(angle) * 36}
+                y2={100 + Math.sin(angle) * 36}
+                stroke="#00E5FF"
+                strokeWidth="1"
+                opacity="0.25"
+              />
+            );
+          })}
+          <motion.circle
+            cx="80" cy="100" r="12"
+            fill="none" stroke="#00E5FF" strokeWidth="1.5" opacity="0.4"
+            animate={{ opacity: [0.3, 0.6, 0.3] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
+          <motion.circle
+            cx="80" cy="100" r="4"
+            fill="#00E5FF" opacity="0.5"
+            animate={{ opacity: [0.3, 0.7, 0.3] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
+        </motion.g>
+
+        {/* Small gear - counter-rotating */}
+        <motion.g
+          animate={{ rotate: -360 }}
+          transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+          style={{ transformOrigin: "155px 65px" }}
+        >
+          {Array.from({ length: 10 }, (_, i) => {
+            const angle = (i * 36 * Math.PI) / 180;
+            const innerR = 30;
+            const outerR = 38;
+            const toothWidth = 6;
+            const cx = 155, cy = 65;
+            const cosLeft = Math.cos(angle - toothWidth / innerR);
+            const sinLeft = Math.sin(angle - toothWidth / innerR);
+            const cosRight = Math.cos(angle + toothWidth / innerR);
+            const sinRight = Math.sin(angle + toothWidth / innerR);
+            return (
+              <path
+                key={`tooth-sm-${i}`}
+                d={`M${cx + cosLeft * innerR},${cy + sinLeft * innerR} L${cx + cosLeft * outerR},${cy + sinLeft * outerR} L${cx + cosRight * outerR},${cy + sinRight * outerR} L${cx + cosRight * innerR},${cy + sinRight * innerR}`}
+                fill="url(#gearGrad2)"
+                opacity="0.5"
+              />
+            );
+          })}
+          <circle cx="155" cy="65" r="28" fill="none" stroke="#1f41bb" strokeWidth="1.5" opacity="0.3" />
+          <circle cx="155" cy="65" r="20" fill="none" stroke="#1f41bb" strokeWidth="0.8" opacity="0.2" />
+          {Array.from({ length: 4 }, (_, i) => {
+            const angle = (i * 90 * Math.PI) / 180;
+            return (
+              <motion.line
+                key={`spoke-sm-${i}`}
+                x1={155 + Math.cos(angle) * 8}
+                y1={65 + Math.sin(angle) * 8}
+                x2={155 + Math.cos(angle) * 18}
+                y2={65 + Math.sin(angle) * 18}
+                stroke="#1f41bb"
+                strokeWidth="1"
+                opacity="0.25"
+              />
+            );
+          })}
+          <motion.circle
+            cx="155" cy="65" r="6"
+            fill="none" stroke="#1f41bb" strokeWidth="1.5" opacity="0.4"
+            animate={{ opacity: [0.3, 0.6, 0.3] }}
+            transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+          />
+          <motion.circle
+            cx="155" cy="65" r="2.5"
+            fill="#1f41bb" opacity="0.5"
+            animate={{ opacity: [0.3, 0.7, 0.3] }}
+            transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+          />
+        </motion.g>
+
+        {/* Tiny gear - bottom right */}
+        <motion.g
+          animate={{ rotate: 360 }}
+          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+          style={{ transformOrigin: "175px 140px" }}
+        >
+          {Array.from({ length: 8 }, (_, i) => {
+            const angle = (i * 45 * Math.PI) / 180;
+            const innerR = 18;
+            const outerR = 24;
+            const toothWidth = 5;
+            const cx = 175, cy = 140;
+            const cosLeft = Math.cos(angle - toothWidth / innerR);
+            const sinLeft = Math.sin(angle - toothWidth / innerR);
+            const cosRight = Math.cos(angle + toothWidth / innerR);
+            const sinRight = Math.sin(angle + toothWidth / innerR);
+            return (
+              <path
+                key={`tooth-xs-${i}`}
+                d={`M${cx + cosLeft * innerR},${cy + sinLeft * innerR} L${cx + cosLeft * outerR},${cy + sinLeft * outerR} L${cx + cosRight * outerR},${cy + sinRight * outerR} L${cx + cosRight * innerR},${cy + sinRight * innerR}`}
+                fill="url(#gearGrad1)"
+                opacity="0.4"
+              />
+            );
+          })}
+          <circle cx="175" cy="140" r="16" fill="none" stroke="#00E5FF" strokeWidth="1" opacity="0.25" />
+          <motion.circle
+            cx="175" cy="140" r="4"
+            fill="none" stroke="#00E5FF" strokeWidth="1" opacity="0.4"
+            animate={{ opacity: [0.3, 0.6, 0.3] }}
+            transition={{ duration: 1.5, repeat: Infinity, delay: 1 }}
+          />
+          <motion.circle
+            cx="175" cy="140" r="1.5"
+            fill="#00E5FF" opacity="0.5"
+          />
+        </motion.g>
+
+        {/* Connection energy pulses between gears */}
+        <motion.circle
+          cx="0" cy="0" r="3" fill="#00E5FF"
+          animate={{
+            cx: [120, 135, 145],
+            cy: [88, 78, 72],
+            opacity: [0, 0.7, 0],
+          }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.circle
+          cx="0" cy="0" r="2" fill="#1f41bb"
+          animate={{
+            cx: [160, 168, 173],
+            cy: [95, 110, 125],
+            opacity: [0, 0.6, 0],
+          }}
+          transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut", delay: 0.7 }}
+        />
+      </svg>
+    </div>
+  );
+}
+
+// Animated terminal/code window
+export function AnimatedTerminal({ className = "" }: { className?: string }) {
+  const codeLines = [
+    { width: 70, delay: 0 },
+    { width: 55, delay: 0.3 },
+    { width: 85, delay: 0.6 },
+    { width: 40, delay: 0.9 },
+    { width: 65, delay: 1.2 },
+    { width: 50, delay: 1.5 },
+    { width: 75, delay: 1.8 },
+  ];
+
+  return (
+    <div className={`relative ${className}`}>
+      <svg
+        viewBox="0 0 200 180"
+        className="w-full h-full"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="termBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#1f41bb" stopOpacity="0.3" />
+          </linearGradient>
+        </defs>
+
+        {/* Window frame */}
+        <motion.rect
+          x="10" y="10" width="180" height="160" rx="8" ry="8"
+          fill="none" stroke="url(#termBorder)" strokeWidth="1.2"
+          animate={{ opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 4, repeat: Infinity }}
+        />
+
+        {/* Title bar */}
+        <line x1="10" y1="35" x2="190" y2="35" stroke="#00E5FF" strokeWidth="0.5" opacity="0.2" />
+
+        {/* Window dots */}
+        <circle cx="26" cy="22" r="4" fill="#FF5F56" opacity="0.4" />
+        <circle cx="40" cy="22" r="4" fill="#FFBD2E" opacity="0.4" />
+        <circle cx="54" cy="22" r="4" fill="#27CA40" opacity="0.4" />
+
+        {/* Title text placeholder */}
+        <rect x="70" y="18" width="60" height="8" rx="2" fill="#00E5FF" opacity="0.1" />
+
+        {/* Code lines with typing animation */}
+        {codeLines.map((line, i) => (
+          <g key={`code-${i}`}>
+            {/* Line number */}
+            <rect
+              x="18"
+              y={45 + i * 16}
+              width="12"
+              height="8"
+              rx="1"
+              fill="#1f41bb"
+              opacity="0.2"
+            />
+            {/* Code content - animated width */}
+            <motion.rect
+              x="36"
+              y={45 + i * 16}
+              width={line.width}
+              height="8"
+              rx="2"
+              fill={i % 3 === 0 ? "#00E5FF" : i % 3 === 1 ? "#1f41bb" : "#00E5FF"}
+              initial={{ width: 0, opacity: 0 }}
+              animate={{
+                width: [0, line.width, line.width, 0],
+                opacity: [0, 0.3, 0.3, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                delay: line.delay,
+                ease: "easeInOut",
+              }}
+            />
+          </g>
+        ))}
+
+        {/* Blinking cursor */}
+        <motion.rect
+          x="36"
+          y={45 + codeLines.length * 16}
+          width="8"
+          height="10"
+          rx="1"
+          fill="#00E5FF"
+          animate={{ opacity: [0, 0.7, 0] }}
+          transition={{ duration: 1, repeat: Infinity }}
+        />
+
+        {/* Floating bracket decorations */}
+        <motion.text
+          x="160" y="55"
+          fill="#00E5FF" fontSize="14" fontFamily="monospace" opacity="0.15"
+          animate={{ opacity: [0.1, 0.25, 0.1], y: [55, 52, 55] }}
+          transition={{ duration: 3, repeat: Infinity }}
+        >
+          {"{"}
+        </motion.text>
+        <motion.text
+          x="165" y="145"
+          fill="#1f41bb" fontSize="14" fontFamily="monospace" opacity="0.15"
+          animate={{ opacity: [0.1, 0.25, 0.1], y: [145, 148, 145] }}
+          transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
+        >
+          {"}"}
+        </motion.text>
+      </svg>
+    </div>
+  );
+}
+
+// Animated pulsing signal / radar
+export function AnimatedRadar({ className = "" }: { className?: string }) {
+  return (
+    <div className={`relative ${className}`}>
+      <svg
+        viewBox="0 0 200 200"
+        className="w-full h-full"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <radialGradient id="radarGlow">
+            <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="#00E5FF" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+
+        {/* Concentric rings */}
+        {[20, 40, 60, 80].map((r, i) => (
+          <motion.circle
+            key={`ring-${i}`}
+            cx="100" cy="100" r={r}
+            fill="none" stroke="#00E5FF" strokeWidth="0.6"
+            opacity="0.12"
+            animate={{ opacity: [0.08, 0.18, 0.08] }}
+            transition={{ duration: 3, repeat: Infinity, delay: i * 0.4 }}
+          />
+        ))}
+
+        {/* Cross lines */}
+        <line x1="100" y1="15" x2="100" y2="185" stroke="#00E5FF" strokeWidth="0.4" opacity="0.08" />
+        <line x1="15" y1="100" x2="185" y2="100" stroke="#00E5FF" strokeWidth="0.4" opacity="0.08" />
+        <line x1="40" y1="40" x2="160" y2="160" stroke="#00E5FF" strokeWidth="0.3" opacity="0.06" />
+        <line x1="160" y1="40" x2="40" y2="160" stroke="#00E5FF" strokeWidth="0.3" opacity="0.06" />
+
+        {/* Rotating sweep */}
+        <motion.g
+          animate={{ rotate: 360 }}
+          transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+          style={{ transformOrigin: "100px 100px" }}
+        >
+          <path
+            d="M100,100 L100,20 A80,80 0 0,1 156,44 Z"
+            fill="url(#radarGlow)"
+            opacity="0.6"
+          />
+          <line x1="100" y1="100" x2="100" y2="20" stroke="#00E5FF" strokeWidth="1" opacity="0.4" />
+        </motion.g>
+
+        {/* Center dot */}
+        <motion.circle
+          cx="100" cy="100" r="4"
+          fill="#00E5FF"
+          animate={{ opacity: [0.5, 1, 0.5], r: [3, 5, 3] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        />
+
+        {/* Blips detected */}
+        {[
+          { cx: 130, cy: 70, delay: 0.5 },
+          { cx: 65, cy: 85, delay: 1.8 },
+          { cx: 140, cy: 130, delay: 3.2 },
+          { cx: 80, cy: 140, delay: 2.5 },
+          { cx: 115, cy: 55, delay: 1.0 },
+        ].map((blip, i) => (
+          <g key={`blip-${i}`}>
+            <motion.circle
+              cx={blip.cx} cy={blip.cy} r="8"
+              fill="#00E5FF" opacity="0"
+              animate={{
+                opacity: [0, 0.15, 0.15, 0],
+                r: [4, 10, 10, 4],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                delay: blip.delay,
+              }}
+            />
+            <motion.circle
+              cx={blip.cx} cy={blip.cy} r="2.5"
+              fill="#00E5FF"
+              animate={{ opacity: [0, 0.8, 0.8, 0] }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                delay: blip.delay,
+              }}
+            />
+          </g>
+        ))}
+      </svg>
+    </div>
+  );
+}
+
 // Animated globe for GlobalPresence
 export function AnimatedGlobe({ className = "" }: { className?: string }) {
   return (

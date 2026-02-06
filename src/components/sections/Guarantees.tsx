@@ -96,8 +96,12 @@ export default function Guarantees() {
     <section className="relative bg-[#0B0E14] py-24 lg:py-32 overflow-hidden">
       <FloatingParticles count={12} />
       <HexGrid opacity={0.03} />
-      {/* Animated Shield decoration */}
-      <div className="absolute left-4 top-1/2 -translate-y-1/2 w-56 h-64 opacity-15 pointer-events-none hidden lg:block">
+      {/* Animated Shield decoration - left */}
+      <div className="absolute left-6 top-1/3 w-64 h-72 opacity-25 pointer-events-none hidden lg:block">
+        <AnimatedShield />
+      </div>
+      {/* Animated Shield decoration - right */}
+      <div className="absolute right-6 bottom-24 w-48 h-56 opacity-15 pointer-events-none hidden lg:block" style={{ transform: "scaleX(-1)" }}>
         <AnimatedShield />
       </div>
 

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Smartphone, Globe, Database, Cpu, ShoppingCart, Users } from "lucide-react";
 import { Card, IconBox, SectionHeader, FloatingParticles } from "../ui";
 import TiltCard from "../ui/TiltCard";
-import { CircuitLines } from "../ui/SVGDecorations";
+import { CircuitLines, AnimatedTerminal } from "../ui/SVGDecorations";
 
 const solutions = [
   {
@@ -75,6 +75,13 @@ export default function WhatWeDo() {
     <section id="que-hacemos" className="relative bg-[#0B0E14] py-24 lg:py-32 overflow-hidden">
       <FloatingParticles count={20} />
       <CircuitLines />
+      {/* Animated Terminal decoration */}
+      <div className="absolute right-6 top-24 w-56 h-48 opacity-25 pointer-events-none hidden lg:block">
+        <AnimatedTerminal />
+      </div>
+      <div className="absolute left-4 bottom-16 w-44 h-40 opacity-15 pointer-events-none hidden lg:block">
+        <AnimatedTerminal />
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         <motion.div

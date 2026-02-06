@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { MessageSquare, FileText, Code, Rocket } from "lucide-react";
 import { SectionHeader, ScanLine, FloatingParticles } from "../ui";
-import { GlowingOrb } from "../ui/SVGDecorations";
+import { GlowingOrb, AnimatedGears } from "../ui/SVGDecorations";
 
 const steps = [
   {
@@ -55,6 +55,13 @@ export default function Process() {
       {/* Animated background elements */}
       <ScanLine />
       <FloatingParticles count={15} />
+      {/* Animated Gears decoration */}
+      <div className="absolute left-6 top-1/3 w-56 h-48 opacity-25 pointer-events-none hidden lg:block">
+        <AnimatedGears />
+      </div>
+      <div className="absolute right-4 bottom-20 w-44 h-40 opacity-15 pointer-events-none hidden lg:block" style={{ transform: "scaleX(-1)" }}>
+        <AnimatedGears />
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         <motion.div

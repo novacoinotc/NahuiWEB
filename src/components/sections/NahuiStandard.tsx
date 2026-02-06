@@ -60,11 +60,11 @@ export default function NahuiStandard() {
   return (
     <section className="relative bg-[#0B0E14] py-24 lg:py-32 line-pattern overflow-hidden">
       {/* Animated CPU decoration - right side */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 opacity-20 pointer-events-none hidden lg:block">
+      <div className="absolute right-4 top-1/4 w-72 h-72 opacity-30 pointer-events-none hidden lg:block">
         <AnimatedCPU />
       </div>
       {/* Animated CPU decoration - left side (mirrored) */}
-      <div className="absolute left-0 bottom-16 w-48 h-48 opacity-10 pointer-events-none hidden lg:block" style={{ transform: "scaleX(-1)" }}>
+      <div className="absolute left-4 bottom-24 w-56 h-56 opacity-20 pointer-events-none hidden lg:block" style={{ transform: "scaleX(-1)" }}>
         <AnimatedCPU />
       </div>
 

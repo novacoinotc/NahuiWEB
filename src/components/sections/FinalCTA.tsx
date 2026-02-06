@@ -10,8 +10,12 @@ export default function FinalCTA() {
       {/* Animated background */}
       <AnimatedOrbs />
       <FloatingParticles count={25} />
-      {/* Animated Rocket decoration */}
-      <div className="absolute right-8 top-1/2 -translate-y-1/2 w-40 h-56 opacity-20 pointer-events-none hidden lg:block">
+      {/* Animated Rocket decoration - right */}
+      <div className="absolute right-12 top-1/4 w-48 h-64 opacity-30 pointer-events-none hidden lg:block">
+        <AnimatedRocket />
+      </div>
+      {/* Animated Rocket decoration - left (smaller) */}
+      <div className="absolute left-8 bottom-16 w-36 h-48 opacity-20 pointer-events-none hidden lg:block" style={{ transform: "scaleX(-1) rotate(15deg)" }}>
         <AnimatedRocket />
       </div>
 

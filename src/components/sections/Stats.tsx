@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import AnimatedCounter from "../ui/AnimatedCounter";
-import { HexGrid } from "../ui/SVGDecorations";
+import { HexGrid, AnimatedRadar } from "../ui/SVGDecorations";
 
 const stats = [
   {
@@ -45,6 +45,13 @@ export default function Stats() {
     <section className="relative bg-black py-16 lg:py-20 overflow-hidden">
       {/* Subtle hex pattern background */}
       <HexGrid opacity={0.02} />
+      {/* Animated Radar decoration */}
+      <div className="absolute right-8 top-1/2 -translate-y-1/2 w-48 h-48 opacity-25 pointer-events-none hidden lg:block">
+        <AnimatedRadar />
+      </div>
+      <div className="absolute left-4 top-1/2 -translate-y-1/2 w-40 h-40 opacity-15 pointer-events-none hidden lg:block">
+        <AnimatedRadar />
+      </div>
 
       {/* Top/bottom gradient borders */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00E5FF]/30 to-transparent" />
