@@ -24,22 +24,39 @@ function useTypingEffect(phrases: string[], typingSpeed = 40, deleteSpeed = 25, 
   const [displayText, setDisplayText] = useState("");
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isWaiting, setIsWaiting] = useState(false);
 
   useEffect(() => {
+    if (isWaiting) return;
+
     const currentPhrase = phrases[phraseIndex];
 
     const timeout = setTimeout(
       () => {
         if (!isDeleting) {
-          setDisplayText(currentPhrase.slice(0, displayText.length + 1));
-          if (displayText.length === currentPhrase.length) {
-            setTimeout(() => setIsDeleting(true), pauseTime);
+          // Typing forward
+          if (displayText.length < currentPhrase.length) {
+            setDisplayText(currentPhrase.slice(0, displayText.length + 1));
+          } else {
+            // Done typing — pause, then start deleting
+            setIsWaiting(true);
+            setTimeout(() => {
+              setIsWaiting(false);
+              setIsDeleting(true);
+            }, pauseTime);
           }
         } else {
-          setDisplayText(currentPhrase.slice(0, displayText.length - 1));
-          if (displayText.length === 0) {
-            setIsDeleting(false);
-            setPhraseIndex((prev) => (prev + 1) % phrases.length);
+          // Deleting
+          if (displayText.length > 0) {
+            setDisplayText(currentPhrase.slice(0, displayText.length - 1));
+          } else {
+            // Done deleting — brief pause, then move to next phrase
+            setIsWaiting(true);
+            setTimeout(() => {
+              setIsWaiting(false);
+              setIsDeleting(false);
+              setPhraseIndex((prev) => (prev + 1) % phrases.length);
+            }, 400);
           }
         }
       },
@@ -47,7 +64,7 @@ function useTypingEffect(phrases: string[], typingSpeed = 40, deleteSpeed = 25, 
     );
 
     return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, phraseIndex, phrases, typingSpeed, deleteSpeed, pauseTime]);
+  }, [displayText, isDeleting, isWaiting, phraseIndex, phrases, typingSpeed, deleteSpeed, pauseTime]);
 
   return displayText;
 }
