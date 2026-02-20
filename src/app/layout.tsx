@@ -43,6 +43,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://nahuilabs.com",
   },
+  other: {
+    "google-site-verification": process.env.NEXT_PUBLIC_GSC_VERIFICATION || "",
+  },
 };
 
 export default function RootLayout({
@@ -51,13 +54,51 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   // Replace these with your actual IDs
-  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX";
-  const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-XXXXXXX";
-  const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID || "XXXXXXXXXXXXXXX";
+  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "G-4RY1S80454";
+  const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-TVFL96GZ";
+  const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID || "1588524562390763";
 
   return (
     <html lang="es" className="scroll-smooth">
       <head>
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareCompany",
+              name: "Nahui Labs",
+              description:
+                "Desarrollo de software a medida impulsado por IA. Apps móviles, plataformas web y sistemas empresariales en días, no meses.",
+              url: "https://nahuilabs.com",
+              email: "hola@nahuilabs.com",
+              foundingDate: "2024",
+              areaServed: ["Mexico", "Latin America", "United States", "Europe"],
+              serviceType: [
+                "Custom Software Development",
+                "Mobile App Development",
+                "Web Platform Development",
+                "Enterprise Systems",
+                "E-commerce Development",
+                "AI-Powered Software",
+              ],
+              knowsAbout: [
+                "Next.js",
+                "React",
+                "TypeScript",
+                "Node.js",
+                "AI",
+                "Machine Learning",
+              ],
+              sameAs: [
+                "https://www.linkedin.com/company/nahuilabs",
+                "https://www.instagram.com/nahuilabs",
+              ],
+            }),
+          }}
+        />
+
         {/* Google Tag Manager */}
         <Script id="gtm-script" strategy="afterInteractive">
           {`
