@@ -29,28 +29,49 @@ export default function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission - Replace with actual form handler
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/hola@nahuilabs.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          phone: formState.phone,
+          company: formState.company,
+          projectType: formState.projectType,
+          message: formState.message,
+          _subject: `Nuevo lead: ${formState.name} - ${formState.projectType}`,
+        }),
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+      if (!response.ok) throw new Error("Error al enviar");
 
-    // Track conversion event
-    if (typeof window !== "undefined") {
-      // Google Ads conversion tracking
-      // @ts-expect-error gtag may not be defined
-      if (window.gtag) {
+      setIsSubmitted(true);
+
+      // Track conversion event
+      if (typeof window !== "undefined") {
+        // Google Ads conversion tracking
         // @ts-expect-error gtag may not be defined
-        window.gtag("event", "conversion", {
-          send_to: "AW-CONVERSION_ID/CONVERSION_LABEL",
-        });
-      }
-      // Facebook Pixel tracking
-      // @ts-expect-error fbq may not be defined
-      if (window.fbq) {
+        if (window.gtag) {
+          // @ts-expect-error gtag may not be defined
+          window.gtag("event", "conversion", {
+            send_to: "AW-690762828/contact_form",
+          });
+        }
+        // Facebook Pixel tracking
         // @ts-expect-error fbq may not be defined
-        window.fbq("track", "Lead");
+        if (window.fbq) {
+          // @ts-expect-error fbq may not be defined
+          window.fbq("track", "Lead");
+        }
       }
+    } catch {
+      alert("Error al enviar el mensaje. Intenta de nuevo o escríbenos a hola@nahuilabs.com");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 

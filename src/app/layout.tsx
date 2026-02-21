@@ -127,6 +127,17 @@ export default function RootLayout({
           `}
         </Script>
 
+        {/* Google Ads Conversion Tracking */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-690762828"
+          strategy="afterInteractive"
+        />
+        <Script id="gads-script" strategy="afterInteractive">
+          {`
+            gtag('config', 'AW-690762828');
+          `}
+        </Script>
+
         {/* Facebook Pixel */}
         <Script id="fb-pixel" strategy="afterInteractive">
           {`
