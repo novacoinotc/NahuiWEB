@@ -7,6 +7,8 @@ import {
   Industries,
   Process,
   NahuiStandard,
+  Testimonials,
+  Portfolio,
   GlobalPresence,
   Guarantees,
   FinalCTA,
@@ -40,7 +42,13 @@ export default function Home() {
         {/* 7. Estándar Nahui — Valor incluido */}
         <NahuiStandard />
 
-        {/* 8. Presencia Global — Servicio internacional */}
+        {/* 8. Testimonios — Prueba social */}
+        <Testimonials />
+
+        {/* 9. Portafolio — Ejemplos visuales */}
+        <Portfolio />
+
+        {/* 10. Presencia Global — Servicio internacional */}
         <GlobalPresence />
 
         {/* 9. Garantías — Reduce riesgo */}

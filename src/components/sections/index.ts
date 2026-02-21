@@ -5,6 +5,8 @@ export { default as Differentiators } from "./Differentiators";
 export { default as Industries } from "./Industries";
 export { default as Process } from "./Process";
 export { default as NahuiStandard } from "./NahuiStandard";
+export { default as Testimonials } from "./Testimonials";
+export { default as Portfolio } from "./Portfolio";
 export { default as GlobalPresence } from "./GlobalPresence";
 export { default as Guarantees } from "./Guarantees";
 export { default as FinalCTA } from "./FinalCTA";

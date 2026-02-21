@@ -30,10 +30,14 @@ export default function FinalCTA() {
             ¿Listo para construir algo extraordinario?
           </h2>
 
-          <p className="text-base text-gray-400 mb-10 font-body">
-            Agenda una llamada de 30 minutos con nuestro equipo. Analizamos tu
-            proyecto, definimos el alcance real y te mostramos exactamente cómo
-            podemos ayudarte. Sin pitch de ventas. Sin compromiso.
+          <p className="text-base text-gray-400 mb-4 font-body">
+            Agenda una llamada de 30 minutos con nuestro equipo. Te escuchamos,
+            entendemos tu problema y te decimos honestamente cómo podemos ayudarte.
+            Sin ventas agresivas. Sin compromiso.
+          </p>
+
+          <p className="text-[#00E5FF] font-semibold mb-10 font-body">
+            Proyectos desde $20,000 MXN · Pagos en parcialidades disponibles
           </p>
 
           <div className="relative inline-block">

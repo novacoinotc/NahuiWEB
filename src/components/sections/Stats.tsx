@@ -6,7 +6,7 @@ import { HexGrid, AnimatedRadar } from "../ui/SVGDecorations";
 
 const stats = [
   {
-    value: 50,
+    value: 500,
     suffix: "+",
     label: "Proyectos entregados",
   },
@@ -84,6 +84,20 @@ export default function Stats() {
               <p className="text-gray-400 text-sm font-body">{stat.label}</p>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Pricing note */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-12 text-center"
+        >
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-[#00E5FF]/20 bg-[#00E5FF]/5">
+            <span className="text-[#00E5FF] font-bold text-lg font-heading">Proyectos desde $20,000 MXN</span>
+            <span className="text-gray-400 text-sm font-body">· Pago flexible en parcialidades</span>
+          </div>
         </motion.div>
       </div>
     </section>

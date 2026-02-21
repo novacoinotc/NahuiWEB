@@ -7,39 +7,39 @@ import { AnimatedCPU } from "../ui/SVGDecorations";
 const standards = [
   {
     number: "01",
-    title: "SEO técnico perfecto",
+    title: "Tu negocio aparece en Google",
     description:
-      "Meta tags, structured data, sitemap, robots.txt, Core Web Vitals optimizados. Sin checklist genérico: implementación real.",
+      "Configuramos todo para que tus clientes te encuentren fácilmente al buscar en internet. Desde el primer día, tu sitio está optimizado para aparecer en los primeros resultados.",
   },
   {
     number: "02",
-    title: "Medición profesional",
+    title: "Sabrás exactamente qué funciona",
     description:
-      "Google Analytics 4, eventos personalizados, embudos de conversión, píxeles de Meta y Google Ads configurados correctamente.",
+      "Instalamos herramientas de medición para que veas cuántas personas visitan tu sitio, de dónde vienen y qué hacen. Datos reales para tomar mejores decisiones.",
   },
   {
     number: "03",
-    title: "Integraciones inteligentes",
+    title: "Todo conectado y automático",
     description:
-      "CRM, WhatsApp Business, calendario de citas, email automation. Lo que necesites para operar, integrado desde el inicio.",
+      "WhatsApp, correos automáticos, agenda de citas, tu sistema de clientes... todo integrado para que no pierdas tiempo en tareas repetitivas.",
   },
   {
     number: "04",
-    title: "Arquitectura serverless",
+    title: "Crece sin preocuparte",
     description:
-      "Infraestructura que escala automáticamente. Sin servidores que mantener, sin límites artificiales, costos proporcionales al uso.",
+      "Tu sistema se adapta solo conforme crece tu negocio. Si hoy tienes 10 clientes y mañana 10,000, todo sigue funcionando igual de rápido.",
   },
   {
     number: "05",
-    title: "Performance extremo",
+    title: "Velocidad que enamora",
     description:
-      "Lighthouse 95+ garantizado. Carga instantánea, experiencia fluida, mejor posicionamiento en Google.",
+      "Tu sitio carga al instante. Nada de pantallas en blanco ni esperas eternas. Tus clientes tienen la mejor experiencia desde el primer clic.",
   },
   {
     number: "06",
-    title: "Código limpio y documentado",
+    title: "Tu proyecto, tu control",
     description:
-      "Arquitectura profesional lista para que tu equipo interno o cualquier desarrollador pueda continuar el proyecto.",
+      "Te entregamos un proyecto profesional y organizado. Si en el futuro quieres hacer cambios con otro equipo, todo estará listo para continuar sin problemas.",
   },
 ];
 
@@ -78,7 +78,7 @@ export default function NahuiStandard() {
           <SectionHeader
             eyebrow="Estándar Nahui"
             title="Lo que otros cobran extra, nosotros lo incluimos siempre"
-            description="Cada proyecto que sale de Nahui Labs cumple con un estándar técnico que garantiza rendimiento, medición y escalabilidad desde el primer deploy."
+            description="Cada proyecto que sale de Nahui Labs viene completo desde el inicio. No hay sorpresas ni costos ocultos: todo lo que tu negocio necesita para funcionar bien, ya está incluido."
           />
         </motion.div>
 
