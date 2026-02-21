@@ -6,6 +6,13 @@ import { useState } from "react";
 
 const projects = [
   {
+    id: "fintech",
+    tab: "NovaCoin · Fintech & Crypto",
+    client: "NovaCoin OTC — novacoin.mx",
+    description: "Ecosistema financiero completo: NovaCoin para compra/venta OTC de criptomonedas, NovaCore como motor de procesamiento de transacciones, y NovaPay como pasarela de pagos cripto. Tecnología financiera y criptográfica de nivel institucional.",
+    mockup: FintechMockup,
+  },
+  {
     id: "dashboard",
     tab: "Dashboard de Ventas",
     client: "Cadena de restaurantes",
@@ -27,6 +34,133 @@ const projects = [
     mockup: LogisticsMockup,
   },
 ];
+
+function FintechMockup() {
+  return (
+    <div className="bg-[#0B0E14] rounded-xl border border-white/10 overflow-hidden">
+      {/* Top bar */}
+      <div className="flex items-center justify-between px-4 py-3 border-b border-white/5">
+        <div className="flex items-center gap-2">
+          <div className="w-3 h-3 rounded-full bg-red-500/60" />
+          <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
+          <div className="w-3 h-3 rounded-full bg-green-500/60" />
+        </div>
+        <div className="text-[10px] text-gray-500 font-body">NovaCoin OTC — Panel de Operaciones</div>
+        <div className="w-16" />
+      </div>
+
+      <div className="p-4">
+        {/* Product tabs */}
+        <div className="flex gap-2 mb-4">
+          {[
+            { name: "NovaCoin", active: true },
+            { name: "NovaCore", active: false },
+            { name: "NovaPay", active: false },
+          ].map((tab) => (
+            <span
+              key={tab.name}
+              className={`px-3 py-1.5 rounded-lg text-[10px] font-body ${
+                tab.active
+                  ? "bg-[#00E5FF]/20 text-[#00E5FF] border border-[#00E5FF]/30"
+                  : "bg-[#1C1F26] text-gray-500 border border-white/5"
+              }`}
+            >
+              {tab.name}
+            </span>
+          ))}
+        </div>
+
+        {/* KPIs */}
+        <div className="grid grid-cols-4 gap-3 mb-4">
+          {[
+            { label: "Volumen 24h", value: "$2.4M", change: "+18%", up: true },
+            { label: "Operaciones", value: "847", change: "+24%", up: true },
+            { label: "BTC/MXN", value: "$1.82M", change: "+2.3%", up: true },
+            { label: "USDT/MXN", value: "$17.42", change: "-0.1%", up: false },
+          ].map((kpi) => (
+            <div key={kpi.label} className="bg-[#1C1F26] rounded-lg p-3">
+              <p className="text-[9px] text-gray-500 font-body">{kpi.label}</p>
+              <p className="text-sm font-bold text-white font-heading mt-1">{kpi.value}</p>
+              <span className={`text-[9px] ${kpi.up ? "text-emerald-400" : "text-red-400"}`}>{kpi.change}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Price chart */}
+        <div className="bg-[#1C1F26] rounded-lg p-4 mb-4">
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] text-gray-400 font-body">BTC/MXN — Últimas 24h</span>
+            </div>
+            <div className="flex gap-1">
+              {["1H", "4H", "1D", "1S"].map((t) => (
+                <span key={t} className={`text-[8px] px-2 py-0.5 rounded font-body ${t === "1D" ? "bg-[#00E5FF]/20 text-[#00E5FF]" : "text-gray-500"}`}>{t}</span>
+              ))}
+            </div>
+          </div>
+          {/* Fake candlestick-style chart */}
+          <div className="flex items-end gap-1 h-20">
+            {[40, 45, 42, 48, 52, 50, 55, 58, 54, 60, 63, 58, 65, 62, 68, 72, 70, 75, 73, 78, 80, 76, 82, 85].map((h, i) => (
+              <div key={i} className="flex-1 flex flex-col items-center gap-0.5">
+                <div
+                  className="w-full rounded-sm"
+                  style={{
+                    height: `${h}%`,
+                    background: h > (i > 0 ? [40, 45, 42, 48, 52, 50, 55, 58, 54, 60, 63, 58, 65, 62, 68, 72, 70, 75, 73, 78, 80, 76, 82, 85][i - 1] : 40)
+                      ? "linear-gradient(to top, #00E5FF, #1f41bb)"
+                      : "#ef444480",
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Recent OTC operations */}
+        <div className="grid grid-cols-2 gap-3">
+          <div className="bg-[#1C1F26] rounded-lg p-3">
+            <p className="text-[10px] text-gray-400 font-body mb-2">Operaciones OTC recientes</p>
+            <div className="space-y-2">
+              {[
+                { type: "Compra", crypto: "BTC", amount: "0.5", mxn: "$910,000", status: "Completada" },
+                { type: "Venta", crypto: "USDT", amount: "50,000", mxn: "$871,000", status: "En proceso" },
+                { type: "Compra", crypto: "ETH", amount: "12.3", mxn: "$485,000", status: "Completada" },
+              ].map((op, i) => (
+                <div key={i} className="flex items-center justify-between text-[9px]">
+                  <span className={`font-body ${op.type === "Compra" ? "text-emerald-400" : "text-red-400"}`}>{op.type}</span>
+                  <span className="text-white font-body">{op.amount} {op.crypto}</span>
+                  <span className="text-gray-400 font-body">{op.mxn}</span>
+                  <span className={`px-1.5 py-0.5 rounded text-[8px] font-body ${
+                    op.status === "Completada" ? "bg-emerald-500/20 text-emerald-400" : "bg-yellow-500/20 text-yellow-400"
+                  }`}>{op.status}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="bg-[#1C1F26] rounded-lg p-3">
+            <p className="text-[10px] text-gray-400 font-body mb-2">NovaPay — Pagos procesados</p>
+            <div className="space-y-2">
+              {[
+                { merchant: "Tienda Online MX", amount: "$12,400", crypto: "USDT", status: "Liquidado" },
+                { merchant: "Servicios Pro", amount: "$8,750", crypto: "BTC", status: "Liquidado" },
+                { merchant: "Import Express", amount: "$45,200", crypto: "USDT", status: "Pendiente" },
+              ].map((pay, i) => (
+                <div key={i} className="flex items-center justify-between text-[9px]">
+                  <span className="text-white font-body truncate max-w-[80px]">{pay.merchant}</span>
+                  <span className="text-gray-400 font-body">{pay.amount}</span>
+                  <span className="text-[#00E5FF] font-body">{pay.crypto}</span>
+                  <span className={`px-1.5 py-0.5 rounded text-[8px] font-body ${
+                    pay.status === "Liquidado" ? "bg-emerald-500/20 text-emerald-400" : "bg-yellow-500/20 text-yellow-400"
+                  }`}>{pay.status}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function DashboardMockup() {
   return (

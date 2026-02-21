@@ -70,10 +70,10 @@ export default function GlobalPresence() {
                 Presencia Global
               </span>
               <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4 font-heading">
-                Basados en México, creando para el mundo
+                Desde Zapopan, Jalisco — creando para el mundo
               </h2>
               <p className="text-gray-400 mb-8 font-body">
-                No importa dónde estés. Trabajamos con clientes en LATAM, USA y Europa,
+                No importa dónde estés. Desde nuestro hub en Zapopan trabajamos con clientes en todo México, LATAM, USA y Europa,
                 con comunicación bilingüe, flexibilidad horaria y múltiples opciones de pago.
               </p>
             </motion.div>

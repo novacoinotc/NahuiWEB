@@ -74,6 +74,12 @@ export default function RootLayout({
               url: "https://nahuilabs.com",
               email: "hola@nahuilabs.com",
               foundingDate: "2024",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Zapopan",
+                addressRegion: "Jalisco",
+                addressCountry: "MX",
+              },
               areaServed: ["Mexico", "Latin America", "United States", "Europe"],
               serviceType: [
                 "Custom Software Development",
@@ -82,6 +88,8 @@ export default function RootLayout({
                 "Enterprise Systems",
                 "E-commerce Development",
                 "AI-Powered Software",
+                "Fintech Development",
+                "Cryptocurrency Platforms",
               ],
               knowsAbout: [
                 "Next.js",

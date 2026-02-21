@@ -52,7 +52,7 @@ export default function Footer() {
               Tu idea. Nuestro código. Resultados reales.
             </p>
             <p className="text-[#00E5FF]/60 text-xs font-medium">
-              Hecho en México | Servicio internacional
+              Zapopan, Jalisco, México | Servicio internacional
             </p>
           </div>
 
@@ -153,7 +153,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Nahui Labs. Todos los derechos reservados.
           </p>
           <p className="text-gray-600 text-xs">
-            México | Servicio internacional
+            Zapopan, Jalisco, México | Servicio internacional
           </p>
         </motion.div>
       </div>
