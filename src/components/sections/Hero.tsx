@@ -86,7 +86,7 @@ export default function Hero() {
       <CodeBrackets side="left" className="left-4 lg:left-12" />
       <CodeBrackets side="right" className="right-4 lg:right-12" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-32 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-20 lg:py-32 text-center">
         {/* Badges */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -115,7 +115,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-base lg:text-lg text-gray-400 max-w-2xl mx-auto mb-12 font-body h-14 flex items-center justify-center"
+          className="text-sm sm:text-base lg:text-lg text-gray-400 max-w-2xl mx-auto mb-8 lg:mb-12 font-body min-h-[3.5rem] sm:h-14 flex items-center justify-center px-2"
         >
           <span>
             {typedText}
@@ -127,7 +127,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.45 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 lg:mb-12 px-2"
         >
           <Button variant="primary" size="large" href="#contacto" className="animate-glow-pulse">
             Quiero mi software a medida

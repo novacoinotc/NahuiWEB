@@ -1,6 +1,5 @@
 "use client";
 
-import { Linkedin, Twitter, Instagram } from "lucide-react";
 import { motion } from "framer-motion";
 import Logo from "./Logo";
 import { CircuitLines } from "../ui/SVGDecorations";
@@ -17,12 +16,6 @@ const legal = [
   { label: "Términos de servicio", href: "/terminos" },
 ];
 
-const social = [
-  { label: "LinkedIn", href: "https://linkedin.com", icon: Linkedin },
-  { label: "Twitter/X", href: "https://twitter.com", icon: Twitter },
-  { label: "Instagram", href: "https://instagram.com", icon: Instagram },
-];
-
 const paymentMethods = [
   "Transferencia",
   "Tarjeta",
@@ -37,8 +30,8 @@ export default function Footer() {
         <CircuitLines />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-10 lg:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8 lg:mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
             <a href="#" className="flex items-center gap-3 mb-4">
@@ -108,26 +101,12 @@ export default function Footer() {
                   hola@nahuilabs.com
                 </a>
               </li>
-              <li className="pt-2 flex items-center gap-3">
-                {social.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-[#00E5FF] transition-colors duration-300"
-                    aria-label={item.label}
-                  >
-                    <item.icon size={20} />
-                  </a>
-                ))}
-              </li>
             </ul>
           </div>
         </div>
 
         {/* Payment methods */}
-        <div className="pb-6 mb-6 border-b border-[#1C1F26]">
+        <div className="pb-4 mb-4 lg:pb-6 lg:mb-6 border-b border-[#1C1F26]">
           <p className="text-gray-600 text-xs mb-3 uppercase tracking-wider">Métodos de pago aceptados</p>
           <div className="flex flex-wrap gap-2">
             {paymentMethods.map((method) => (

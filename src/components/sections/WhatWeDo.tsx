@@ -72,7 +72,7 @@ const itemVariants = {
 
 export default function WhatWeDo() {
   return (
-    <section id="que-hacemos" className="relative bg-[#0B0E14] py-24 lg:py-32 overflow-hidden">
+    <section id="que-hacemos" className="relative bg-[#0B0E14] py-16 lg:py-32 overflow-hidden">
       <FloatingParticles count={20} />
       <CircuitLines />
       {/* Animated Terminal decoration */}
@@ -83,7 +83,7 @@ export default function WhatWeDo() {
         <AnimatedTerminal />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -103,7 +103,7 @@ export default function WhatWeDo() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8"
         >
           {solutions.map((solution) => (
             <motion.div key={solution.title} variants={itemVariants}>

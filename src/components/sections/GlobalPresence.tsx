@@ -42,11 +42,11 @@ const itemVariants = {
 
 export default function GlobalPresence() {
   return (
-    <section className="relative bg-black py-20 lg:py-28 overflow-hidden">
+    <section className="relative bg-black py-16 lg:py-28 overflow-hidden">
       <HexGrid opacity={0.03} />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left - Globe */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -55,7 +55,7 @@ export default function GlobalPresence() {
             transition={{ duration: 0.8 }}
             className="flex justify-center"
           >
-            <AnimatedGlobe className="w-64 h-64 lg:w-80 lg:h-80" />
+            <AnimatedGlobe className="w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80" />
           </motion.div>
 
           {/* Right - Content */}

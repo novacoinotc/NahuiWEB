@@ -51,7 +51,7 @@ const itemVariants = {
 
 export default function Process() {
   return (
-    <section id="proceso" className="relative bg-[#0B0E14] py-24 lg:py-32 overflow-hidden">
+    <section id="proceso" className="relative bg-[#0B0E14] py-16 lg:py-32 overflow-hidden">
       {/* Animated background elements */}
       <ScanLine />
       <FloatingParticles count={15} />
@@ -63,7 +63,7 @@ export default function Process() {
         <AnimatedGears />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

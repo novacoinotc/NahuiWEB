@@ -72,13 +72,13 @@ const itemVariants = {
 
 export default function Industries() {
   return (
-    <section className="relative bg-black py-24 lg:py-32 overflow-hidden">
+    <section className="relative bg-black py-16 lg:py-32 overflow-hidden">
       <NeuralNetwork />
       <div className="absolute inset-0 opacity-30" style={{ pointerEvents: "auto" }}>
         <CursorNetwork intensity="light" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -98,7 +98,7 @@ export default function Industries() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4"
         >
           {industries.map((industry) => (
             <motion.div
@@ -106,7 +106,7 @@ export default function Industries() {
               variants={itemVariants}
               whileHover={{ scale: 1.05, y: -4 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="group bg-[#1C1F26]/50 backdrop-blur-sm p-6 rounded-xl border border-white/5 hover:border-[#00E5FF]/40 hover:bg-[#1C1F26] hover:shadow-[0_0_30px_rgba(0,229,255,0.12)] transition-all duration-300 text-center"
+              className="group bg-[#1C1F26]/50 backdrop-blur-sm p-4 sm:p-6 rounded-xl border border-white/5 hover:border-[#00E5FF]/40 hover:bg-[#1C1F26] hover:shadow-[0_0_30px_rgba(0,229,255,0.12)] transition-all duration-300 text-center"
             >
               <div className="inline-flex p-3 rounded-lg bg-[#00E5FF]/10 text-[#00E5FF] mb-4 group-hover:scale-110 group-hover:bg-[#00E5FF]/20 transition-all duration-300">
                 <industry.icon className="w-6 h-6" />

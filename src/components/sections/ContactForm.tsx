@@ -86,11 +86,11 @@ export default function ContactForm() {
 
   if (isSubmitted) {
     return (
-      <section id="contacto" className="relative bg-[#0B0E14] py-24 lg:py-32 overflow-hidden">
+      <section id="contacto" className="relative bg-[#0B0E14] py-16 lg:py-32 overflow-hidden">
         <AnimatedOrbs />
         <FloatingParticles count={20} />
 
-        <div className="relative z-10 max-w-2xl mx-auto px-6 lg:px-12 text-center">
+        <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -116,13 +116,13 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contacto" className="relative bg-[#0B0E14] py-24 lg:py-32 overflow-hidden">
+    <section id="contacto" className="relative bg-[#0B0E14] py-16 lg:py-32 overflow-hidden">
       <AnimatedOrbs />
       <FloatingParticles count={20} />
       <HexGrid opacity={0.02} />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left side - Copy */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -174,7 +174,7 @@ export default function ContactForm() {
           >
             <form
               onSubmit={handleSubmit}
-              className="relative bg-[#1C1F26] p-8 rounded-2xl border border-white/10 overflow-hidden"
+              className="relative bg-[#1C1F26] p-5 sm:p-8 rounded-2xl border border-white/10 overflow-hidden"
             >
               {/* Animated gradient border overlay */}
               <div className="absolute inset-0 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"

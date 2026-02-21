@@ -121,7 +121,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden text-white p-2"
+            className="md:hidden text-white p-3"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
             whileTap={{ scale: 0.9 }}
@@ -150,7 +150,7 @@ export default function Navbar() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
-                      className={`transition-colors duration-300 text-base font-medium py-2 font-body ${
+                      className={`transition-colors duration-300 text-base font-medium py-3 font-body ${
                         activeSection === link.sectionId
                           ? "text-[#00E5FF]"
                           : "text-white hover:text-[#00E5FF]"

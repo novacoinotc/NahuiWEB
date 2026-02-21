@@ -54,12 +54,14 @@
 /* Smooth scroll for navigation */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   background: var(--color-nahui-black-pure);
   color: #ffffff;
   font-family: var(--font-body);
+  overflow-x: hidden;
 }
 
 /* Typography classes */

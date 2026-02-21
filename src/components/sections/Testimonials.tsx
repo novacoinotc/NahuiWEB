@@ -55,12 +55,12 @@ const itemVariants = {
 
 export default function Testimonials() {
   return (
-    <section className="relative bg-black py-24 lg:py-32 overflow-hidden">
+    <section className="relative bg-black py-16 lg:py-32 overflow-hidden">
       {/* Gradient borders */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00E5FF]/20 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#1f41bb]/20 to-transparent" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -80,13 +80,13 @@ export default function Testimonials() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-8"
         >
           {testimonials.map((testimonial) => (
             <motion.div
               key={testimonial.name}
               variants={itemVariants}
-              className="relative bg-[#1C1F26] border border-white/10 rounded-2xl p-8 hover:border-[#00E5FF]/30 transition-all duration-300 flex flex-col"
+              className="relative bg-[#1C1F26] border border-white/10 rounded-2xl p-5 sm:p-8 hover:border-[#00E5FF]/30 transition-all duration-300 flex flex-col"
             >
               {/* Highlight badge */}
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#00E5FF]/10 border border-[#00E5FF]/20 mb-6 self-start">

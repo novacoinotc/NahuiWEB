@@ -6,7 +6,7 @@ import { AnimatedRocket } from "../ui/SVGDecorations";
 
 export default function FinalCTA() {
   return (
-    <section className="relative bg-[#0B0E14] py-32 overflow-hidden">
+    <section className="relative bg-[#0B0E14] py-16 lg:py-32 overflow-hidden">
       {/* Animated background */}
       <AnimatedOrbs />
       <FloatingParticles count={25} />
@@ -19,7 +19,7 @@ export default function FinalCTA() {
         <AnimatedRocket />
       </div>
 
-      <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-12 text-center">
+      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,7 +36,7 @@ export default function FinalCTA() {
             Sin ventas agresivas. Sin compromiso.
           </p>
 
-          <p className="text-[#00E5FF] font-semibold mb-10 font-body">
+          <p className="text-[#00E5FF] font-semibold text-sm sm:text-base mb-8 lg:mb-10 font-body">
             Proyectos desde $20,000 MXN · Pagos en parcialidades disponibles
           </p>
 

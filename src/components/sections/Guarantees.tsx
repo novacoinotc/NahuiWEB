@@ -93,7 +93,7 @@ function AnimatedCheck() {
 
 export default function Guarantees() {
   return (
-    <section className="relative bg-[#0B0E14] py-24 lg:py-32 overflow-hidden">
+    <section className="relative bg-[#0B0E14] py-16 lg:py-32 overflow-hidden">
       <FloatingParticles count={12} />
       <HexGrid opacity={0.03} />
       {/* Animated Shield decoration - left */}
@@ -105,7 +105,7 @@ export default function Guarantees() {
         <AnimatedShield />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -125,7 +125,7 @@ export default function Guarantees() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
         >
           {guarantees.map((guarantee) => (
             <motion.div

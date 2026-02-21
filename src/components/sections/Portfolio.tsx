@@ -49,7 +49,7 @@ function FintechMockup() {
         <div className="w-16" />
       </div>
 
-      <div className="p-4">
+      <div className="p-3 sm:p-4">
         {/* Product tabs */}
         <div className="flex gap-2 mb-4">
           {[
@@ -71,7 +71,7 @@ function FintechMockup() {
         </div>
 
         {/* KPIs */}
-        <div className="grid grid-cols-4 gap-3 mb-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mb-4">
           {[
             { label: "Volumen 24h", value: "$2.4M", change: "+18%", up: true },
             { label: "Operaciones", value: "847", change: "+24%", up: true },
@@ -117,7 +117,7 @@ function FintechMockup() {
         </div>
 
         {/* Recent OTC operations */}
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div className="bg-[#1C1F26] rounded-lg p-3">
             <p className="text-[10px] text-gray-400 font-body mb-2">Operaciones OTC recientes</p>
             <div className="space-y-2">
@@ -176,9 +176,9 @@ function DashboardMockup() {
         <div className="w-16" />
       </div>
 
-      <div className="p-4">
+      <div className="p-3 sm:p-4">
         {/* KPI cards */}
-        <div className="grid grid-cols-4 gap-3 mb-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mb-4">
           {[
             { label: "Ventas hoy", value: "$48,320", change: "+12%", up: true },
             { label: "Pedidos", value: "186", change: "+8%", up: true },
@@ -260,7 +260,7 @@ function CRMMockup() {
         <div className="w-16" />
       </div>
 
-      <div className="p-4">
+      <div className="p-3 sm:p-4">
         {/* Header with greeting */}
         <div className="flex items-center justify-between mb-4">
           <div>
@@ -274,7 +274,7 @@ function CRMMockup() {
         </div>
 
         {/* Status cards */}
-        <div className="grid grid-cols-3 gap-3 mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 mb-4">
           {[
             { label: "Declaración mensual", status: "En proceso", color: "yellow" },
             { label: "Facturación Feb", status: "Completado", color: "green" },
@@ -348,9 +348,9 @@ function LogisticsMockup() {
         <div className="w-16" />
       </div>
 
-      <div className="p-4">
+      <div className="p-3 sm:p-4">
         {/* Live stats */}
-        <div className="grid grid-cols-4 gap-3 mb-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mb-4">
           {[
             { label: "En ruta", value: "24", icon: "🚛" },
             { label: "Entregados hoy", value: "67", icon: "✅" },
@@ -440,8 +440,8 @@ export default function Portfolio() {
   const ActiveMockup = projects[activeProject].mockup;
 
   return (
-    <section className="relative bg-[#0B0E14] py-24 lg:py-32 overflow-hidden">
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+    <section className="relative bg-[#0B0E14] py-16 lg:py-32 overflow-hidden">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -462,13 +462,13 @@ export default function Portfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3 mb-10"
+          className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 lg:mb-10"
         >
           {projects.map((project, index) => (
             <button
               key={project.id}
               onClick={() => setActiveProject(index)}
-              className={`px-5 py-2.5 rounded-full text-sm font-body transition-all duration-300 ${
+              className={`px-4 sm:px-5 py-3 rounded-full text-xs sm:text-sm font-body transition-all duration-300 ${
                 activeProject === index
                   ? "bg-[#00E5FF]/20 text-[#00E5FF] border border-[#00E5FF]/30"
                   : "bg-[#1C1F26] text-gray-400 border border-white/10 hover:border-white/20"
@@ -485,7 +485,7 @@ export default function Portfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="grid lg:grid-cols-5 gap-8 items-start"
+          className="grid lg:grid-cols-5 gap-6 lg:gap-8 items-start"
         >
           {/* Info */}
           <div className="lg:col-span-2 space-y-4">

@@ -57,13 +57,13 @@ export default function Stats() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00E5FF]/30 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#1f41bb]/30 to-transparent" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 lg:gap-12"
         >
           {stats.map((stat, index) => (
             <motion.div
@@ -78,7 +78,7 @@ export default function Stats() {
                   target={stat.value}
                   suffix={stat.suffix}
                   duration={2 + index * 0.3}
-                  className="relative text-4xl lg:text-5xl font-bold text-nahui-gradient font-heading"
+                  className="relative text-3xl sm:text-4xl lg:text-5xl font-bold text-nahui-gradient font-heading"
                 />
               </div>
               <p className="text-gray-400 text-sm font-body">{stat.label}</p>
@@ -92,11 +92,11 @@ export default function Stats() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 text-center"
+          className="mt-8 lg:mt-12 text-center"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-[#00E5FF]/20 bg-[#00E5FF]/5">
-            <span className="text-[#00E5FF] font-bold text-lg font-heading">Proyectos desde $20,000 MXN</span>
-            <span className="text-gray-400 text-sm font-body">· Pago flexible en parcialidades</span>
+          <div className="inline-flex flex-col sm:flex-row items-center gap-1 sm:gap-3 px-5 sm:px-6 py-3 rounded-2xl sm:rounded-full border border-[#00E5FF]/20 bg-[#00E5FF]/5">
+            <span className="text-[#00E5FF] font-bold text-base sm:text-lg font-heading">Proyectos desde $20,000 MXN</span>
+            <span className="text-gray-400 text-xs sm:text-sm font-body">Pago flexible en parcialidades</span>
           </div>
         </motion.div>
       </div>
