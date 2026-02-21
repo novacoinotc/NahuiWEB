@@ -51,15 +51,18 @@ export default function ContactForm() {
 
       setIsSubmitted(true);
 
-      // Track conversion event
+      // Track conversion events
       if (typeof window !== "undefined") {
-        // Google Ads conversion tracking
         // @ts-expect-error gtag may not be defined
         if (window.gtag) {
+          // Google Ads conversion tracking
           // @ts-expect-error gtag may not be defined
           window.gtag("event", "conversion", {
             send_to: "AW-690762828/contact_form",
           });
+          // Google Ads lead form conversion event
+          // @ts-expect-error gtag may not be defined
+          window.gtag("event", "conversion_event_submit_lead_form");
         }
         // Facebook Pixel tracking
         // @ts-expect-error fbq may not be defined
